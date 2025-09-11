@@ -62,7 +62,7 @@ export default function ProjectsPage() {
                 {t(`projects.projects_list.${key}.description`)}
               </p>
               <a
-                href={`https://github.com/Nubzzin/${
+                href={`https://github.com/matheusCsousa/${
                   key === "json"
                     ? "JSON-editor"
                     : key === "gameoflife"
