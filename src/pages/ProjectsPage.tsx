@@ -73,7 +73,7 @@ export default function ProjectsPage() {
                     ? "compiler-rust-br"
                     : key === "compiler_cpp"
                     ? "Compiler-cpp-hydro"
-                    : "anki-my-frontend"
+                    : "anki-my"
                 }`}
                 target="_blank"
                 className="text-blue-600 hover:underline font-medium"
