@@ -17,7 +17,7 @@
       },
       "json": {
         "title": "Game Engine",
-        "description": "Apenas uma simples Game Engine construida com OpenGl, GLFW e Glew."
+        "description": "Apenas uma simples Game Engine construida com OpenGL, GLFW e Glew."
       },
       "gameoflife": {
         "title": "Jogo da Vida",
