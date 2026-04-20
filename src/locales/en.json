@@ -16,8 +16,8 @@
         "description": "A flashcard app using spaced repetition. Built with React & Rust."
       },
       "json": {
-        "title": "JSON Editor",
-        "description": "A lightweight JSON editor made entirely with Rust."
+        "title": "Game Engine",
+        "description": "Just a simple Game engine"
       },
       "gameoflife": {
         "title": "Game of Life",
