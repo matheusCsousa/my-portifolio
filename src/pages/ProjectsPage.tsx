@@ -64,7 +64,7 @@ export default function ProjectsPage() {
               <a
                 href={`https://github.com/matheusCsousa/${
                   key === "json"
-                    ? "JSON-editor"
+                    ? "FirstGameEngine"
                     : key === "gameoflife"
                     ? "Game-of-Life"
                     : key === "movie"
