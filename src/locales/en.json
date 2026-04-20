@@ -17,7 +17,7 @@
       },
       "json": {
         "title": "Game Engine",
-        "description": "Just a simple Game engine"
+        "description": "Just a simple Game engine build with openGL, GLFW and glew"
       },
       "gameoflife": {
         "title": "Game of Life",
