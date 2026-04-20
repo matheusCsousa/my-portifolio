@@ -16,8 +16,8 @@
         "description": "Um app de flashcards com repetição espaçada. Feito com React & Rust."
       },
       "json": {
-        "title": "Editor JSON",
-        "description": "Editor de JSON leve feito inteiramente em Rust."
+        "title": "Game Engine",
+        "description": "Apenas uma simples Game Engine construida com OpenGl, GLFW e Glew."
       },
       "gameoflife": {
         "title": "Jogo da Vida",
