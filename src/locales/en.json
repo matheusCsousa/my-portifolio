@@ -1,62 +1,85 @@
 {
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
   "home": {
     "title": "Hi, I'm Matheus",
-    "subtitle": "A passionate developer focused on building web apps and OS-focused software.",
-    "projects_button": "View Projects",
-    "contact_button": "Contact Me"
+    "subtitle": "Software Engineer & Low-Level Developer",
+    "description": "I build interactive web applications, high-performance game engines, and system-level software using modern technologies.",
+    "projects_button": "Explore My Work",
+    "contact_button": "Get in Touch",
+    "tech_stack_title": "My Tech Stack",
+    "view_all_projects": "View All Projects →"
   },
   "projects": {
     "title": "My Projects",
-    "subtitle": "Here are some of the projects I've worked on.",
+    "subtitle": "A collection of systems, engines, and web apps I've built.",
+    "filter_all": "All",
+    "filter_web": "Web / Fullstack",
+    "filter_systems": "Systems / C++ / Rust",
     "contact_button": "Contact Me",
     "home_button": "Home",
     "projects_list": {
       "anki": {
         "title": "Anki My",
-        "description": "A flashcard app using spaced repetition. Built with React & Rust."
+        "description": "A modern spaced-repetition flashcard application built with React and Rust. Features offline-first support and efficient learning algorithms."
       },
-      "json": {
-        "title": "Game Engine",
-        "description": "Just a simple Game engine build with OpenGL, GLFW and Glew."
+      "firstgameengine": {
+        "title": "First Game Engine",
+        "description": "A custom 2D/3D game engine built from scratch using OpenGL, GLFW, and GLEW. Features shader loaders, asset rendering, and collision detection."
       },
       "gameoflife": {
-        "title": "Game of Life",
-        "description": "A Raylib-based simulation of Conway’s Game of Life in C++."
+        "title": "Conway's Game of Life",
+        "description": "An interactive, high-performance simulation of Conway’s Game of Life in C++ using Raylib for rendering. Supports custom seed shapes and speed controls."
       },
-      "movie": {
-        "title": "Movie Finder React",
-        "description": "React app that allows users to search and browse movies using a movie API."
+      "petadopt": {
+        "title": "Pet Adoption System",
+        "description": "A full-stack pet adoption management web app featuring user profiles, pet cataloging, adoption workflow matching, and secure forms."
       },
       "compiler_rust": {
-        "title": "Compiler in Rust",
-        "description": "Rust compiler using assembly as intermediate language."
+        "title": "Rust Compiler",
+        "description": "A compiler developed in Rust that parses a simple custom language and generates x86-64 assembly as the intermediate representation."
       },
       "compiler_cpp": {
-        "title": "Compiler in C++",
-        "description": "A compiler made in C++ for a test language with simple syntax."
+        "title": "C++ Compiler",
+        "description": "A compiler written in C++ featuring scanner, parser, AST generation, and basic code execution for a lightweight programming language."
       },
-      "github_link": "View on GitHub →"
+      "new_project": {
+        "title": "Your Project Here?",
+        "description": "I am always looking to collaborate on new challenges. Let's build something amazing together!"
+      },
+      "github_link": "View on GitHub",
+      "collab_link": "Let's Collaborate"
     }
   },
   "contact": {
     "contacts": {
-      "title": "Get in touch",
-      "subtitle": "Feel free to reach out!",
-      "quick": "Contacts",
+      "title": "Let's Build Something Together",
+      "subtitle": "Feel free to reach out for collaboration, project inquiries, or just to say hi!",
+      "quick": "Direct Channels",
+      "form_title": "Send a Message",
+      "form_name": "Name",
+      "form_email": "Email",
+      "form_message": "Message",
+      "form_submit": "Send Message",
+      "form_success": "Message sent successfully!",
+      "form_error": "Failed to send message. Please try again.",
       "email": {
-        "label": "📧 Email:",
+        "label": "Email",
         "url": "mailto:matheuscds.contato@gmail.com",
         "text": "matheuscds.contato@gmail.com"
       },
       "linkedin": {
-        "label": "💼 LinkedIn:",
+        "label": "LinkedIn",
         "url": "https://www.linkedin.com/in/matheus-correia-de-sousa",
-        "text": "linkedin.com/in/matheus-correia-de-sousa"
+        "text": "matheus-correia-de-sousa"
       },
       "github": {
-        "label": "🐙 GitHub:",
+        "label": "GitHub",
         "url": "https://github.com/matheusCsousa",
-        "text": "github.com/matheusCsousa"
+        "text": "matheusCsousa"
       }
     }
   }
