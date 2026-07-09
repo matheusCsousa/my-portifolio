@@ -7,10 +7,16 @@
   "home": {
     "title": "Olá, eu sou o Matheus",
     "subtitle": "Engenheiro de Software & Desenvolvedor Low-Level",
-    "description": "Crio aplicações web interativas, engines de jogos de alta performance e softwares voltados a sistemas operacionais utilizando tecnologias modernas.",
+    "description": "Estudante de Análise e Desenvolvimento de Sistemas na Fatec Jundiaí, com foco em engenharia de software e programação de baixo nível. Gosto de construir coisas do zero, desde aplicações web até compiladores e programas gráficos.",
     "projects_button": "Explore Meu Trabalho",
     "contact_button": "Entre em Contato",
-    "tech_stack_title": "Minhas Tecnologias",
+    "tech_stack_title": "Tecnologias & Ferramentas",
+    "tech_categories": {
+      "languages": "Linguagens",
+      "frameworks_tools": "Frameworks & Ferramentas",
+      "databases": "Bancos de Dados",
+      "os": "Sistemas Operacionais"
+    },
     "view_all_projects": "Ver Todos os Projetos →"
   },
   "projects": {

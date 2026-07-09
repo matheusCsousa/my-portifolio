@@ -1,27 +1,73 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import backgroundImage from "../assets/image.jpeg";
-import {
-  CppIcon,
-  RustIcon,
-  ReactIcon,
-  OpenGlIcon,
-  TailwindIcon,
-  WebIcon,
-  ArrowRightIcon,
-  PlusIcon
-} from "../components/Icons";
+import { ArrowRightIcon, PlusIcon } from "../components/Icons";
+
+interface SkillItem {
+  name: string;
+  logo: string;
+}
+
+interface SkillCategory {
+  key: string;
+  titleKey: string;
+  glowColor: string;
+  items: SkillItem[];
+}
 
 export default function HomePage() {
   const { t } = useTranslation();
 
-  const techStack = [
-    { name: "C++", icon: CppIcon, color: "text-blue-500", level: "Systems / Engines" },
-    { name: "Rust", icon: RustIcon, color: "text-amber-500", level: "Memory Safety / WebAssembly" },
-    { name: "OpenGL / GLEW", icon: OpenGlIcon, color: "text-teal-400", level: "Graphics Programming" },
-    { name: "React", icon: ReactIcon, color: "text-cyan-400", level: "Frontend Applications" },
-    { name: "Tailwind CSS", icon: TailwindIcon, color: "text-sky-400", level: "Modern Styling" },
-    { name: "Fullstack / APIs", icon: WebIcon, color: "text-emerald-400", level: "Node.js / Databases" },
+  const skillsCategories: SkillCategory[] = [
+    {
+      key: "languages",
+      titleKey: "home.tech_categories.languages",
+      glowColor: "group-hover:shadow-blue-500/10 group-hover:border-blue-500/30",
+      items: [
+        { name: "C", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" },
+        { name: "C++", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" },
+        { name: "C#", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" },
+        { name: "Rust", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg" },
+        { name: "Java", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" },
+        { name: "Python", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
+        { name: "JavaScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" },
+        { name: "TypeScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" },
+        { name: "PHP", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" },
+      ],
+    },
+    {
+      key: "frameworks_tools",
+      titleKey: "home.tech_categories.frameworks_tools",
+      glowColor: "group-hover:shadow-teal-500/10 group-hover:border-teal-500/30",
+      items: [
+        { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
+        { name: "Express", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" },
+        { name: "Git", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" },
+        { name: "CMake", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cmake/cmake-original.svg" },
+        { name: "OpenGL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/opengl/opengl-original.svg" },
+        { name: "Vite", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" },
+        { name: "Tailwind CSS", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
+      ],
+    },
+    {
+      key: "databases",
+      titleKey: "home.tech_categories.databases",
+      glowColor: "group-hover:shadow-emerald-500/10 group-hover:border-emerald-500/30",
+      items: [
+        { name: "PostgreSQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" },
+        { name: "MySQL", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" },
+        { name: "MongoDB", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" },
+      ],
+    },
+    {
+      key: "os",
+      titleKey: "home.tech_categories.os",
+      glowColor: "group-hover:shadow-indigo-500/10 group-hover:border-indigo-500/30",
+      items: [
+        { name: "Windows 11", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows11/windows11-original.svg" },
+        { name: "Linux", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" },
+      ],
+    },
   ];
 
   const featuredKeys = ["anki", "firstgameengine", "gameoflife", "petadopt"];
@@ -40,7 +86,7 @@ export default function HomePage() {
               <span className="flex h-2 w-2 rounded-full bg-teal-400 animate-pulse" />
               <span>Available for Collaboration</span>
             </div>
-            <h1 className="text-glow-teal text-4xl md:text-6xl font-extrabold tracking-tight text-white">
+            <h1 className="text-glow-teal text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">
               {t("home.title")}
             </h1>
             <h2 className="text-xl md:text-2xl font-semibold bg-gradient-to-r from-teal-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent">
@@ -93,24 +139,38 @@ export default function HomePage() {
             <div className="h-1 w-20 bg-teal-500 rounded-full mx-auto md:mx-0" />
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
-            {techStack.map((tech) => {
-              const Icon = tech.icon;
-              return (
-                <div
-                  key={tech.name}
-                  className="glow-border flex items-center space-x-4 rounded-2xl border border-white/5 bg-slate-900/30 p-5 backdrop-blur-sm hover:bg-slate-900/60 transition duration-300"
-                >
-                  <div className={`rounded-xl bg-slate-950 p-3 ${tech.color} border border-white/5`}>
-                    <Icon className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white text-base">{tech.name}</h3>
-                    <p className="text-xs text-slate-500">{tech.level}</p>
+          <div className="grid gap-8 md:grid-cols-2">
+            {skillsCategories.map((category) => (
+              <div
+                key={category.key}
+                className={`group flex flex-col justify-between rounded-3xl border border-white/5 bg-slate-900/10 p-6 backdrop-blur-sm hover:bg-slate-900/30 hover:shadow-lg transition-all duration-500 ${category.glowColor}`}
+              >
+                <div>
+                  <h3 className="text-lg font-bold text-slate-200 mb-6 group-hover:text-teal-400 transition-colors duration-300">
+                    {t(category.titleKey)}
+                  </h3>
+                  <div className="flex flex-wrap gap-3.5">
+                    {category.items.map((tech) => (
+                      <div
+                        key={tech.name}
+                        className="group/item flex flex-col items-center justify-center p-2 rounded-2xl bg-slate-950/60 border border-white/5 hover:bg-slate-950 hover:border-teal-500/20 transition-all duration-300 w-[72px] h-[72px]"
+                        title={tech.name}
+                      >
+                        <img
+                          src={tech.logo}
+                          alt={tech.name}
+                          className="w-8 h-8 object-contain filter brightness-90 group-hover/item:brightness-100 group-hover/item:scale-110 transition duration-300"
+                          loading="lazy"
+                        />
+                        <span className="text-[9px] text-slate-500 mt-1.5 truncate max-w-full text-center group-hover/item:text-slate-300 transition duration-300">
+                          {tech.name}
+                        </span>
+                      </div>
+                    ))}
                   </div>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </section>
 

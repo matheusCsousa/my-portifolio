@@ -7,10 +7,16 @@
   "home": {
     "title": "Hi, I'm Matheus",
     "subtitle": "Software Engineer & Low-Level Developer",
-    "description": "I build interactive web applications, high-performance game engines, and system-level software using modern technologies.",
+    "description": "Systems Analysis and Development student at Fatec Jundiaí, focused on software engineering and low-level programming. I enjoy building things from scratch—from web apps to compilers and graphics programs.",
     "projects_button": "Explore My Work",
     "contact_button": "Get in Touch",
-    "tech_stack_title": "My Tech Stack",
+    "tech_stack_title": "Technologies & Tools",
+    "tech_categories": {
+      "languages": "Languages",
+      "frameworks_tools": "Frameworks & Tools",
+      "databases": "Databases",
+      "os": "Operating Systems"
+    },
     "view_all_projects": "View All Projects →"
   },
   "projects": {
