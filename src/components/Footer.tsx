@@ -1,4 +1,7 @@
+import { useTranslation } from "react-i18next";
+
 export default function Footer() {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -14,7 +17,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="hover:text-teal-400 transition"
           >
-            GitHub
+            {t("footer.github")}
           </a>
           <a
             href="https://www.linkedin.com/in/matheus-correia-de-sousa"
@@ -22,13 +25,13 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="hover:text-teal-400 transition"
           >
-            LinkedIn
+            {t("footer.linkedin")}
           </a>
           <a
             href="mailto:matheuscds.contato@gmail.com"
             className="hover:text-teal-400 transition"
           >
-            Email
+            {t("footer.email")}
           </a>
         </div>
       </div>

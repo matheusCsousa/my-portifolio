@@ -1,13 +1,9 @@
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import whiteImage from "../assets/white.jpg";
 import { GithubIcon, LinkedInIcon } from "../components/Icons";
 
 export default function ContactPage() {
   const { t } = useTranslation();
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
   const email = t("contact.contacts.email", { returnObjects: true }) as {
     label: string;
@@ -25,21 +21,6 @@ export default function ContactPage() {
     label: string;
     url: string;
     text: string;
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) return;
-
-    setIsSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus("success");
-      setFormData({ name: "", email: "", message: "" });
-      // Reset status after a few seconds
-      setTimeout(() => setSubmitStatus("idle"), 5000);
-    }, 1500);
   };
 
   return (
@@ -68,10 +49,9 @@ export default function ContactPage() {
         </div>
 
         {/* CONTACT CONTENT SECTION */}
-        <div className="grid gap-12 md:grid-cols-12 items-start">
-          {/* Quick Channels Column */}
-          <div className="md:col-span-5 flex flex-col space-y-6">
-            <h2 className="text-2xl font-bold text-white mb-2 tracking-tight">
+        <div className="mx-auto max-w-4xl">
+          <div className="grid gap-6 md:grid-cols-3">
+            <h2 className="md:col-span-3 text-center text-2xl font-bold text-white mb-2 tracking-tight">
               {t("contact.contacts.quick")}
             </h2>
             
@@ -144,82 +124,6 @@ export default function ContactPage() {
                 </p>
               </div>
             </a>
-          </div>
-
-          {/* Form Column */}
-          <div className="md:col-span-7 bg-slate-900/30 border border-white/5 rounded-3xl p-8 backdrop-blur-sm">
-            <h2 className="text-2xl font-bold text-white mb-6 tracking-tight">
-              {t("contact.contacts.form_title")}
-            </h2>
-
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Name */}
-              <div>
-                <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">
-                  {t("contact.contacts.form_name")}
-                </label>
-                <input
-                  type="text"
-                  required
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full bg-slate-950/80 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/20 transition duration-300"
-                />
-              </div>
-
-              {/* Email */}
-              <div>
-                <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">
-                  {t("contact.contacts.form_email")}
-                </label>
-                <input
-                  type="email"
-                  required
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full bg-slate-950/80 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/20 transition duration-300"
-                />
-              </div>
-
-              {/* Message */}
-              <div>
-                <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">
-                  {t("contact.contacts.form_message")}
-                </label>
-                <textarea
-                  rows={5}
-                  required
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full bg-slate-950/80 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-teal-500/50 focus:ring-1 focus:ring-teal-500/20 transition duration-300 resize-none"
-                />
-              </div>
-
-              {/* Status Message */}
-              {submitStatus === "success" && (
-                <div className="text-sm text-emerald-400 font-medium">
-                  {t("contact.contacts.form_success")}
-                </div>
-              )}
-              {submitStatus === "error" && (
-                <div className="text-sm text-rose-400 font-medium">
-                  {t("contact.contacts.form_error")}
-                </div>
-              )}
-
-              {/* Submit */}
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full flex items-center justify-center space-x-2 rounded-xl bg-gradient-to-r from-teal-500 to-emerald-600 px-6 py-3.5 font-semibold text-slate-950 hover:brightness-110 active:scale-95 transition disabled:opacity-50 cursor-pointer shadow-lg shadow-teal-500/10"
-              >
-                {isSubmitting ? (
-                  <span className="w-5 h-5 border-2 border-slate-950 border-t-transparent rounded-full animate-spin" />
-                ) : (
-                  <span>{t("contact.contacts.form_submit")}</span>
-                )}
-              </button>
-            </form>
           </div>
         </div>
       </div>

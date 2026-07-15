@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
 @layer utilities {
   /* Neon text & card glow utilities */
   .text-glow-teal {
@@ -39,6 +43,47 @@
     mix-blend-mode: screen;
     animation: float-blob-reverse 25s infinite alternate;
   }
+
+  /* Scroll reveal animation */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  /* Typing cursor blink */
+  .typing-cursor {
+    display: inline-block;
+    width: 3px;
+    height: 0.9em;
+    background-color: #2dd4bf;
+    margin-left: 2px;
+    vertical-align: text-bottom;
+    animation: blink-cursor 0.75s step-end infinite;
+  }
+
+  /* Page enter animation */
+  .page-enter {
+    animation: pageSlideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* Mobile menu overlay */
+  .mobile-menu-open {
+    animation: slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .mobile-menu-close {
+    animation: slideOut 0.25s ease-in forwards;
+  }
 }
 
 @keyframes float-blob {
@@ -63,6 +108,51 @@
   100% {
     transform: translate(30px, -30px) scale(1.2);
   }
+}
+
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes pageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+/* Counter number animation */
+@keyframes countPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
 /* Custom scrollbar */

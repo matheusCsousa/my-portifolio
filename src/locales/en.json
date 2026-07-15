@@ -2,14 +2,21 @@
   "nav": {
     "home": "Home",
     "projects": "Projects",
-    "contact": "Contact"
+    "contact": "Contact",
+    "resume": "Download CV",
+    "menu": "Menu",
+    "close": "Close"
   },
   "home": {
     "title": "Hi, I'm Matheus",
     "subtitle": "Software Engineer & Low-Level Developer",
-    "description": "Systems Analysis and Development student at Fatec Jundiaí, focused on software engineering and low-level programming. I enjoy building things from scratch—from web apps to compilers and graphics programs.",
+    "availability": "Available for Collaboration",
+    "description": "Systems Analysis and Development student at Fatec Jundiaí, focused on software engineering and low-level programming. I enjoy building things from scratch, from web apps to compilers and graphics programs.",
     "projects_button": "Explore My Work",
     "contact_button": "Get in Touch",
+    "resume_button": "Download CV",
+    "location_label": "Location",
+    "location_value": "Brazil / Remote",
     "tech_stack_title": "Technologies & Tools",
     "tech_categories": {
       "languages": "Languages",
@@ -17,7 +24,16 @@
       "databases": "Databases",
       "os": "Operating Systems"
     },
-    "view_all_projects": "View All Projects →"
+    "view_all_projects": "View All Projects →",
+    "about_title": "What I Bring",
+    "about_description": "I combine systems programming fundamentals with practical full-stack delivery, and I actively study engineering books such as Clean Code, Clean Architecture, The Pragmatic Programmer, and others to sharpen how I design and maintain software.",
+    "stats": {
+      "projects": "Projects Built",
+      "systems": "Systems Foundations",
+      "systems_value": "C/C++ & Rust",
+      "quality": "Code Quality Focus",
+      "quality_value": "Books & Practice"
+    }
   },
   "projects": {
     "title": "My Projects",
@@ -38,7 +54,7 @@
       },
       "gameoflife": {
         "title": "Conway's Game of Life",
-        "description": "An interactive, high-performance simulation of Conway’s Game of Life in C++ using Raylib for rendering. Supports custom seed shapes and speed controls."
+        "description": "An interactive, high-performance simulation of Conway's Game of Life in C++ using Raylib for rendering. Supports custom seed shapes and speed controls."
       },
       "petadopt": {
         "title": "Pet Adoption System",
@@ -88,5 +104,10 @@
         "text": "matheusCsousa"
       }
     }
+  },
+  "footer": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "Email"
   }
 }

@@ -2,14 +2,21 @@
   "nav": {
     "home": "Início",
     "projects": "Projetos",
-    "contact": "Contato"
+    "contact": "Contato",
+    "resume": "Baixar CV",
+    "menu": "Menu",
+    "close": "Fechar"
   },
   "home": {
     "title": "Olá, eu sou o Matheus",
     "subtitle": "Engenheiro de Software & Desenvolvedor Low-Level",
+    "availability": "Disponível para Colaborações",
     "description": "Estudante de Análise e Desenvolvimento de Sistemas na Fatec Jundiaí, com foco em engenharia de software e programação de baixo nível. Gosto de construir coisas do zero, desde aplicações web até compiladores e programas gráficos.",
     "projects_button": "Explore Meu Trabalho",
     "contact_button": "Entre em Contato",
+    "resume_button": "Baixar CV",
+    "location_label": "Localização",
+    "location_value": "Brasil / Remoto",
     "tech_stack_title": "Tecnologias & Ferramentas",
     "tech_categories": {
       "languages": "Linguagens",
@@ -17,7 +24,16 @@
       "databases": "Bancos de Dados",
       "os": "Sistemas Operacionais"
     },
-    "view_all_projects": "Ver Todos os Projetos →"
+    "view_all_projects": "Ver Todos os Projetos →",
+    "about_title": "O Que Eu Trago",
+    "about_description": "Combino fundamentos de programação de sistemas com entrega full-stack prática, e estudo ativamente livros de engenharia como Clean Code, Clean Architecture, The Pragmatic Programmer e outros para melhorar como projeto e mantenho software.",
+    "stats": {
+      "projects": "Projetos Construídos",
+      "systems": "Fundamentos de Sistemas",
+      "systems_value": "C/C++ & Rust",
+      "quality": "Foco em Qualidade",
+      "quality_value": "Livros & Prática"
+    }
   },
   "projects": {
     "title": "Meus Projetos",
@@ -88,5 +104,10 @@
         "text": "matheusCsousa"
       }
     }
+  },
+  "footer": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "E-mail"
   }
 }
