@@ -4,14 +4,15 @@
     "projects": "Projetos",
     "contact": "Contato",
     "resume": "Baixar CV",
+    "resume_file": "matheus-cv-pt.pdf",
     "menu": "Menu",
     "close": "Fechar"
   },
   "home": {
     "title": "Olá, eu sou o Matheus",
-    "subtitle": "Engenheiro de Software & Desenvolvedor Low-Level",
+    "subtitle": "Desenvolvedor de software focado em programação de sistemas, aplicações full-stack e código limpo e fácil de manter.",
     "availability": "Disponível para Colaborações",
-    "description": "Estudante de Análise e Desenvolvimento de Sistemas na Fatec Jundiaí, com foco em engenharia de software e programação de baixo nível. Gosto de construir coisas do zero, desde aplicações web até compiladores e programas gráficos.",
+    "description": "Construo software prático com atenção a arquitetura, performance e manutenibilidade. Meu trabalho passa por ferramentas desktop em Rust, sistemas web full-stack e experimentos gráficos em C++.",
     "projects_button": "Explore Meu Trabalho",
     "contact_button": "Entre em Contato",
     "resume_button": "Baixar CV",
@@ -26,47 +27,183 @@
     },
     "view_all_projects": "Ver Todos os Projetos →",
     "about_title": "O Que Eu Trago",
-    "about_description": "Combino fundamentos de programação de sistemas com entrega full-stack prática, e estudo ativamente livros de engenharia como Clean Code, Clean Architecture, The Pragmatic Programmer e outros para melhorar como projeto e mantenho software.",
+    "about_description": "Combino fundamentos de programação de sistemas com entrega full-stack prática, e estudo ativamente livros de engenharia de software para melhorar como projeto e mantenho código.",
+    "education": {
+      "title": "Formação",
+      "items": [
+        "Análise e Desenvolvimento de Sistemas, Fatec Jundiaí",
+        "Foco em engenharia de software, bancos de dados, desenvolvimento web e fundamentos de sistemas"
+      ]
+    },
+    "learning": {
+      "title": "Estudando Agora",
+      "description": "Mantenho uma trilha de estudo focada em fundamentos mais profundos de engenharia e projetos que me obrigam a entender como o software funciona por baixo.",
+      "items": ["Rust", "Compiladores", "Clean Architecture", "OpenGL", "Design de Sistemas"]
+    },
+    "books": {
+      "title": "Estudo de Engenharia",
+      "description": "Uso livros para construir melhor julgamento técnico, não apenas acumular teoria.",
+      "items": [
+        "Clean Code e Clean Architecture",
+        "The Pragmatic Programmer",
+        "Refatoração, princípios de design e manutenibilidade"
+      ]
+    },
     "stats": {
-      "projects": "Projetos Construídos",
-      "systems": "Fundamentos de Sistemas",
+      "systems": "Programação de Sistemas",
       "systems_value": "C/C++ & Rust",
-      "quality": "Foco em Qualidade",
-      "quality_value": "Livros & Prática"
+      "fullstack": "Apps Full-Stack",
+      "fullstack_value": "React & Node",
+      "architecture": "Clean Architecture",
+      "architecture_value": "Livros & Prática"
     }
   },
   "projects": {
     "title": "Meus Projetos",
-    "subtitle": "Uma coleção de sistemas, engines e aplicações web que desenvolvi.",
+    "subtitle": "Três projetos maiores que mostram minha forma de pensar produto, sistemas e entrega full-stack.",
     "filter_all": "Todos",
     "filter_web": "Web / Fullstack",
     "filter_systems": "Sistemas / C++ / Rust",
+    "case_study": "Ver Case",
+    "back_to_projects": "Voltar para projetos",
+    "not_found_title": "Projeto não encontrado",
+    "problem_title": "Problema",
+    "focus_title": "Foco Técnico",
+    "features_title": "Principais Features",
+    "learning_title": "O Que Pratiquei",
     "contact_button": "Contato",
     "home_button": "Início",
     "projects_list": {
       "anki": {
         "title": "Anki My",
-        "description": "Um aplicativo moderno de flashcards com repetição espaçada construído com React e Rust. Possui suporte offline-first e algoritmos eficientes de aprendizado."
+        "type": "Aplicação web full-stack",
+        "description": "Um aplicativo auto-hospedado de flashcards inspirado no Anki, construído com React e TypeScript no frontend e um backend REST API em Rust (Rocket).",
+        "summary": "Anki My é uma ferramenta web de estudos criada para explorar a integração de uma interface moderna e responsiva com um backend de alta performance em Rust.",
+        "problem": "Estudar com flashcards exige gerenciamento dinâmico de baralhos, persistência estável no servidor e uma interface sem fricção. O projeto foca em criar um sistema de repetição espaçada seguro e auto-hospedado.",
+        "focus": "APIs de backend em Rust, banco de dados PostgreSQL (SQLx), autenticação JWT, interface em React e uma separação clara de serviços.",
+        "features": [
+          "Autenticação JWT (registro/login) com senhas criptografadas via bcrypt",
+          "Criação e gerenciamento de baralhos (decks)",
+          "Adicionar cards com frente e verso",
+          "Navegar por baralhos públicos compartilhados",
+          "Filtrar baralhos por nome"
+        ],
+        "learnings": [
+          "Estruturar uma aplicação web desacoplada com Rust e React",
+          "Implementar fluxos de autenticação JWT e criptografia de senhas de forma segura",
+          "Gerenciar conexões e migrações de banco de dados relacional com SQLx e PostgreSQL"
+        ],
+        "setup": {
+          "title": "Arquitetura & Configuração do Projeto",
+          "quick_start": "Início Rápido",
+          "clone": "1. Clonar o repositório",
+          "backend_title": "2. Configuração do Backend (Rust + Rocket)",
+          "backend_desc": "Crie um arquivo .env dentro do diretório backend com suas variáveis DATABASE_URL e JWT_SECRET:",
+          "backend_note": "O serviço de API do backend escutará em http://localhost:8000",
+          "frontend_title": "3. Configuração do Frontend (React + TS)",
+          "frontend_desc": "Instale as dependências, defina as variáveis de ambiente e inicie o servidor de desenvolvimento:",
+          "frontend_note": "O servidor de desenvolvimento do frontend rodará em http://localhost:5173",
+          "structure": "Estrutura do Projeto",
+          "layers": "Camadas do Stack",
+          "layer": "Camada",
+          "technology": "Tecnologia",
+          "layer_frontend": "Frontend",
+          "layer_backend": "Backend",
+          "layer_db": "Banco de Dados",
+          "layer_auth": "Autenticação"
+        }
       },
       "firstgameengine": {
         "title": "First Game Engine",
-        "description": "Uma engine de jogo 2D/3D customizada, construída do zero com OpenGL, GLFW e GLEW. Inclui carregadores de shaders, renderização de assets e detecção de colisões."
-      },
-      "gameoflife": {
-        "title": "Jogo da Vida de Conway",
-        "description": "Uma simulação interativa de alta performance do Jogo da Vida de Conway em C++ usando Raylib para renderização. Suporta seeds customizadas e controles de velocidade."
+        "type": "Engine gráfica em C++",
+        "description": "Um experimento de engine própria feito do zero com C++, OpenGL, GLFW e GLEW para estudar renderização, shaders, assets e estrutura de engine.",
+        "summary": "First Game Engine é um projeto low-level em C++ no qual explorei como sistemas de renderização, carregamento de shaders, assets e loops de engine se conectam.",
+        "problem": "Engines escondem muita complexidade. Construir uma engine pequena do zero me ajudou a entender pipeline de renderização, loop de aplicação e comunicação entre sistemas.",
+        "focus": "Arquitetura em C++, renderização OpenGL, gerenciamento de shaders, renderização de assets, input e fundações para colisão.",
+        "features": [
+          "Pipeline de renderização OpenGL com VAO, VBO, EBO e gerenciamento de shaders",
+          "Câmera livre em primeira pessoa com visualização por mouse e movimento por delta-time",
+          "Sistema de cena e entidades com transformações por entidade (posição, rotação, escala)",
+          "Sistema de input com estados de tecla (pressed / held / released) e rastreamento de mouse",
+          "Interface abstrata Logic para desacoplar a lógica do jogo do loop principal da engine",
+          "Sistema de compilação CMake com cada módulo compilado como biblioteca estática"
+        ],
+        "learnings": [
+          "Trabalhar mais próximo de APIs gráficas e restrições de memória",
+          "Organizar código C++ para sistemas que crescem com o tempo",
+          "Entender como renderização, input e loops de atualização interagem"
+        ]
       },
       "petadopt": {
-        "title": "Pet Adoption System",
-        "description": "Um sistema web full-stack para adoção de pets, contendo perfis de usuários, catálogo de pets, fluxos de correspondência de adoção e formulários seguros."
-      },
-      "compiler_rust": {
-        "title": "Compilador em Rust",
-        "description": "Um compilador desenvolvido em Rust que analisa uma linguagem simples e gera assembly x86-64 como representação intermediária."
-      },
-      "compiler_cpp": {
-        "title": "Compilador em C++",
-        "description": "Um compilador desenvolvido em C++ contendo scanner, parser, geração de AST e execução básica de código para uma linguagem de programação leve."
+        "title": "Adote um Pet (NGO Pet Adoption Platform)",
+        "type": "Aplicação Web em PHP",
+        "description": "Uma aplicação web PHP + MySQL que gerencia todo o fluxo de adoção de pets para um abrigo/ONG de animais: cadastro de animais resgatados, anúncios de adoção e triagem das solicitações com fluxo de aprovação por funcionários.",
+        "summary": "Pet Adoption System é uma aplicação web em PHP que gerencia fluxos de usuários, perfis de animais e fluxos multiusuário de adoção com consultas SQL puras e verificações de sessão.",
+        "problem": "O gerenciamento de abrigos exige coordenação entre funcionários e adotantes, rotas protegidas, limites de perfil e controle transacional para evitar solicitações concorrentes para o mesmo pet.",
+        "focus": "Roteamento front-controller, padrão Table Data Gateway, transações SQL puras com bloqueios de linha, guardas de acesso por sessão e robustez de segurança.",
+        "features": [
+          "Roteamento unificado e layout consistente com output buffering",
+          "Classes Table Data Gateway encapsulando operações SQL por tabela",
+          "Transações de banco de dados explícitas com bloqueios de linha SELECT ... FOR UPDATE",
+          "Controle de acesso dinâmico baseado em funções e verificação de sessões"
+        ],
+        "learnings": [
+          "Implementar limites de transação e bloqueios de linha em bancos de dados relacionais",
+          "Projetar acessos limpos ao banco de dados com padrão Table Data Gateway",
+          "Impor controle de acesso por perfil e gerenciamento seguro de sessões em PHP puro"
+        ],
+        "setup": {
+          "title": "Arquitetura & Detalhes Técnicos",
+          "routing_title": "1. Roteador & Front Controller",
+          "routing_desc": "A aplicação gerencia requisições por meio de um único front controller (index.php), roteando parâmetros de consulta com base em uma lista de páginas permitidas e capturando saídas via output buffering do PHP:",
+          "gateway_title": "2. Padrão Table Data Gateway",
+          "gateway_desc": "Cada entidade do banco de dados possui uma classe Gateway correspondente que encapsula todas as operações SQL, mantendo um limite claro entre a lógica da página e as consultas:",
+          "gateway_headers": ["Classe Gateway", "Tabela", "Responsabilidade principal"],
+          "gateway_rows": [
+            ["AbrigoGateway", "Abrigo", "Listagem e busca de abrigos por ID (somente leitura)"],
+            ["FuncionarioGateway", "Funcionario", "Contas de funcionários, autenticação e perfil"],
+            ["AdotanteGateway", "Adotante", "Contas de adotantes, autenticação e perfil"],
+            ["AnimalGateway", "Animal", "CRUD de pets, status e consultas de listagem"],
+            ["FotoGateway", "Foto", "Fotos de pets, com BLOB no banco ou redirecionamento por URL"],
+            ["VacinaGateway", "Vacina / Aplica", "Catálogo de vacinas e histórico de aplicação"],
+            ["AdocaoGateway", "Adocao", "Solicitações de adoção, fluxo de status e transações"]
+          ],
+          "workflow_title": "3. Fluxo de Adoção & Transações",
+          "workflow_desc": "Para evitar condições de corrida (race conditions) quando múltiplos adotantes solicitam o mesmo animal simultaneamente, o sistema utiliza transações PDO combinadas com bloqueios de linha SELECT ... FOR UPDATE:",
+          "workflow_steps": [
+            "createRequest(): bloqueia o animal, cria a solicitação e muda o status para Em_adocao.",
+            "approve(): aprova uma solicitação, cancela as pendentes e marca o animal como Adotado.",
+            "cancel(): cancela a solicitação e só devolve o animal a Disponivel quando não há outra solicitação ativa."
+          ],
+          "access_title": "4. Matriz de Controle de Acesso",
+          "access_desc": "O acesso é protegido usando filtros de sessão nativos do PHP (exigirLogin / exigirFuncionario) definidos em src/auth.php:",
+          "access_headers": ["Rota (?page=)", "Permissão", "Guarda aplicada"],
+          "access_rows": [
+            ["home, listar_pets, detalhes_pet, login, cadastro", "Qualquer pessoa (público)", "Nenhuma"],
+            ["perfil, minhas_adocoes", "Qualquer usuário autenticado", "exigirLogin() — minhas_adocoes também exige perfil de adotante"],
+            ["cadastrar_pet, anunciar_pet, gerenciar_pets, validar_adocoes", "Somente funcionários", "exigirFuncionario()"]
+          ],
+          "install_title": "Instalação & Carga de Dados",
+          "install_desc": "Siga os passos abaixo para configurar e executar a aplicação localmente:",
+          "demo_title": "Contas de Demonstração Locais",
+          "demo_desc": "Os dados de semente (ong_adocao.sql) fornecem as seguintes contas para testes locais:",
+          "demo_headers": ["Tipo de usuário", "E-mail", "Senha padrão"],
+          "demo_rows": [
+            ["Funcionária (Administradora)", "ana@ong.com", "ana123"],
+            ["Funcionário (Atendente)", "carlos@ong.com", "carlos123"],
+            ["Adotante", "joao@email.com", "07092002"],
+            ["Adotante", "fernanda@email.com", "fernanda123"]
+          ],
+          "limits_title": "Limitações Conhecidas & Roadmap",
+          "limits_desc": "Diversas melhorias arquiteturais são sugeridas para modernizar a base de código da aplicação:",
+          "limits_list": [
+            "Hash de senhas: usa PASSWORD() do MySQL, função descontinuada no MySQL 8.x. Próximo passo: migrar para password_hash() / password_verify() do PHP.",
+            "Credenciais fixas: a conexão está definida em Database.php. Próximo passo: mover para config.php ou variáveis de ambiente.",
+            "404 provisória: a página está vazia e o roteador retorna silenciosamente para a home.",
+            "Sem tokens CSRF: formulários POST ainda precisam de proteção contra requisições forjadas.",
+            "Fotos em LONGBLOB: adequado ao protótipo; em produção, arquivos ou object storage com apenas o caminho no banco escalam melhor."
+          ]
+        }
       },
       "new_project": {
         "title": "Seu Projeto Aqui?",
@@ -74,7 +211,17 @@
       },
       "github_link": "Ver no GitHub",
       "collab_link": "Vamos Colaborar"
-    }
+    },
+    "architecture_title": "Arquitetura & Sistemas",
+    "structure_title": "Estrutura do Projeto",
+    "architecture_subtitle": "Arquitetura Core",
+    "architecture_desc": "A engine impõe uma separação limpa entre sistemas fundamentais e a lógica de aplicação através da interface Core::Logic. O loop principal em Core::Game chama onUpdate() e onRender() a cada frame, que são implementados pela aplicação de jogo.",
+    "camera_system_title": "Sistemas de Câmera & Input",
+    "camera_desc": "Core::Graphics::Camera calcula as matrizes de visualização e projeção, enquanto FreeCam a estende com movimentação WASD + QE e controles de visualização por mouse.",
+    "input_desc": "Core::Input rastreia três estados de tecla (pressed, held, released) e calcula o delta time para que o movimento seja consistente independente da taxa de quadros.",
+    "build_run_title": "Compilação & Execução",
+    "new_app_title": "Criando uma Nova Aplicação",
+    "new_app_desc": "Para criar um jogo com a engine, herde de Core::Logic, configure as GameSpecs, adicione a lógica e inicie o loop principal:"
   },
   "contact": {
     "contacts": {
@@ -93,6 +240,8 @@
         "url": "mailto:matheuscds.contato@gmail.com",
         "text": "matheuscds.contato@gmail.com"
       },
+      "copy_email": "Copiar e-mail",
+      "email_copied": "E-mail copiado",
       "linkedin": {
         "label": "LinkedIn",
         "url": "https://www.linkedin.com/in/matheus-correia-de-sousa",

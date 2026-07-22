@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import whiteImage from "../assets/white.jpg";
+import whiteImage from "../assets/white.webp";
 import { GithubIcon, LinkedInIcon } from "../components/Icons";
 
 export default function ContactPage() {
   const { t } = useTranslation();
+  const [copied, setCopied] = useState(false);
 
   const email = t("contact.contacts.email", { returnObjects: true }) as {
     label: string;
@@ -21,6 +23,12 @@ export default function ContactPage() {
     label: string;
     url: string;
     text: string;
+  };
+
+  const copyEmail = async () => {
+    await navigator.clipboard.writeText(email.text);
+    setCopied(true);
+    window.setTimeout(() => setCopied(false), 1800);
   };
 
   return (
@@ -55,11 +63,8 @@ export default function ContactPage() {
               {t("contact.contacts.quick")}
             </h2>
             
-            {/* Email Card */}
-            <a
-              href={email.url}
-              className="group glow-border flex items-center space-x-4 rounded-2xl border border-white/5 bg-slate-900/20 p-5 backdrop-blur-sm hover:bg-slate-900/50 transition duration-300"
-            >
+            <div className="group glow-border flex flex-col gap-4 rounded-2xl border border-white/5 bg-slate-900/20 p-5 backdrop-blur-sm transition duration-300 hover:bg-slate-900/50">
+              <a href={email.url} className="flex items-center space-x-4">
               <div className="rounded-xl bg-slate-950 p-3 text-teal-400 border border-white/5 group-hover:scale-105 transition duration-300">
                 <svg
                   className="w-6 h-6"
@@ -83,7 +88,15 @@ export default function ContactPage() {
                   {email.text}
                 </p>
               </div>
-            </a>
+              </a>
+              <button
+                type="button"
+                onClick={copyEmail}
+                className="rounded-full border border-teal-500/30 bg-teal-500/5 px-4 py-2 text-xs font-semibold text-teal-300 transition hover:bg-teal-500/10"
+              >
+                {copied ? t("contact.contacts.email_copied") : t("contact.contacts.copy_email")}
+              </button>
+            </div>
 
             {/* LinkedIn Card */}
             <a

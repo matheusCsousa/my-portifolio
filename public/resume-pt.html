@@ -1,0 +1,275 @@
+<!-- 
+  CURRÍCULO — COMO ATUALIZAR O PDF
+  =================================
+  1. Edite este arquivo HTML diretamente.
+  2. Abra num navegador (duplo clique, ou seu servidor local).
+  3. Ctrl+P (Cmd+P no Mac) para imprimir.
+  4. Destino: "Salvar como PDF".
+  5. Configurações: Papel A4, Margens: Nenhuma, desmarque "Cabeçalhos e
+     rodapés", marque "Gráficos de fundo" se disponível.
+  6. Salve como matheus-cv-pt.pdf.
+
+  ITENS ENTRE [colchetes] SÃO PLACEHOLDERS — preencha com datas/números
+  reais antes de enviar. Procure por "[" para encontrar todos.
+
+  Endereço completo removido (mantido só cidade/estado) por prática
+  moderna de currículo. Se preferir manter o endereço completo para
+  alguma vaga específica, é só adicionar de volta na linha de contato.
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currículo Matheus Correia de Sousa</title>
+    <style>
+      :root {
+        --ink: #111827;
+        --muted: #4b5563;
+        --line: #d1d5db;
+        --accent: #0f766e;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11pt;
+        line-height: 1.42;
+        background: #f8fafc;
+      }
+
+      main {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0 auto;
+        padding: 18mm;
+        background: #ffffff;
+      }
+
+      header {
+        border-bottom: 2px solid var(--line);
+        padding-bottom: 12px;
+        margin-bottom: 16px;
+      }
+
+      h1 {
+        margin: 0 0 4px;
+        font-size: 25pt;
+      }
+
+      h2 {
+        margin: 18px 0 8px;
+        color: var(--accent);
+        font-size: 12pt;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+      }
+
+      h3 {
+        margin: 0 0 3px;
+        font-size: 11.5pt;
+      }
+
+      p {
+        margin: 0 0 8px;
+      }
+
+      ul {
+        margin: 6px 0 0 18px;
+        padding: 0;
+      }
+
+      li {
+        margin-bottom: 4px;
+      }
+
+      .subtitle {
+        color: var(--muted);
+        font-size: 12pt;
+        font-weight: 700;
+      }
+
+      .contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 14px;
+        color: var(--muted);
+        font-size: 9.5pt;
+        margin-top: 8px;
+      }
+
+      .skill-line {
+        margin-bottom: 6px;
+        font-size: 10.5pt;
+      }
+
+      .skill-line strong {
+        display: inline-block;
+        min-width: 110px;
+      }
+
+      .item {
+        break-inside: avoid;
+        margin-bottom: 12px;
+      }
+
+      .meta {
+        color: var(--muted);
+        font-size: 9.5pt;
+        font-weight: 700;
+        margin-bottom: 4px;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .cert-line {
+        margin-bottom: 6px;
+        font-size: 10.5pt;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .placeholder {
+        color: #b91c1c;
+        font-weight: 700;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      @media print {
+        body {
+          background: #ffffff;
+        }
+
+        main {
+          width: auto;
+          min-height: auto;
+          margin: 0;
+        }
+
+        .placeholder {
+          color: var(--ink);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Matheus Correia de Sousa</h1>
+        <p class="subtitle">
+          Desenvolvedor de software focado em programação de sistemas,
+          aplicações full-stack e código limpo e sustentável.
+        </p>
+        <div class="contact">
+          <span>Jundiaí, SP</span>
+          <span>(11) 91736-6568</span>
+          <span><a href="mailto:matheuscds.contato@gmail.com">matheuscds.contato@gmail.com</a></span>
+          <span><a href="https://www.linkedin.com/in/matheus-correia-de-sousa">linkedin.com/in/matheus-correia-de-sousa</a></span>
+          <span><a href="https://github.com/matheusCsousa">github.com/matheusCsousa</a></span>
+        </div>
+      </header>
+
+      <section>
+        <h2>Perfil</h2>
+        <p>
+          Estudante de Análise e Desenvolvimento de Sistemas na Fatec
+          Jundiaí Ary Fossen. Construo software prático em sistemas,
+          aplicações full-stack e computação gráfica: serviços em Rust,
+          front-ends em React e trabalho em C++/OpenGL. Interesse constante
+          em entender como o software funciona por baixo dos panos, de
+          pipelines de renderização aos internals dos frameworks que uso
+          no dia a dia.
+        </p>
+      </section>
+
+      <section>
+        <h2>Habilidades</h2>
+        <p class="skill-line"><strong>Sistemas:</strong> C, C++, Rust, OpenGL, CMake, Linux</p>
+        <p class="skill-line"><strong>Web:</strong> React, TypeScript, JavaScript, Node.js, Express</p>
+        <p class="skill-line"><strong>Bancos de Dados:</strong> PostgreSQL, MySQL, MongoDB</p>
+        <p class="skill-line"><strong>Ferramentas:</strong> Git, GitHub, Docker</p>
+        <p class="skill-line"><strong>Práticas:</strong> Clean Architecture, TDD, RESTful API design</p>
+        <p class="skill-line"><strong>Inglês:</strong> B2 (intermediário avançado)</p>
+      </section>
+
+      <section>
+        <h2>Projetos</h2>
+
+        <div class="item">
+          <h3>Anki My</h3>
+          <p class="meta">
+            <span>React, Rust (Rocket), PostgreSQL, JWT</span>
+            <span>Julho 2025 – Atual</span>
+          </p>
+          <ul>
+            <li>Aplicativo full-stack de flashcards com repetição espaçada: front-end em React, back-end em Rust/Rocket, autenticação via JWT, persistência em PostgreSQL.</li>
+            <li>Back-end responsável pelo agendamento de revisões por repetição espaçada, exposto ao front-end através da API em Rocket.</li>
+            <li>Front-end e back-end consolidados em um monorepo único (git subtree) para versionamento unificado.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <h3>Pet Adoption System</h3>
+          <p class="meta">
+            <span>PHP puro, MySQL</span>
+            <span>Maio 2026</span>
+          </p>
+          <ul>
+            <li>Sistema full-stack para catalogação de pets disponíveis para adoção e gestão de solicitações de interesse, construído em PHP puro (sem framework) e MySQL.</li>
+            <li>Tratamento de formulários, validação e persistência de dados implementados diretamente em PHP.</li>
+            <li>Gerencia registros de pets (espécie, idade, status de adoção) com entrada de dados estruturada diretamente em PHP.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <h3>First Game Engine</h3>
+          <p class="meta">
+            <span>C++, OpenGL, GLFW, GLEW, GLM</span>
+            <span>Abril 2026 – Atual</span>
+          </p>
+          <ul>
+            <li>Engine 3D construída do zero para estudo de pipelines de renderização e arquitetura de engines.</li>
+            <li>Sistema de câmera em primeira pessoa com rotação escalada por deltaTime, para movimento independente da taxa de quadros.</li>
+            <li>Usa vcpkg para gerência de dependências e CMake + CPack para builds multiplataforma.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Educação</h2>
+        <div class="item">
+          <h3>Fatec Jundiaí Ary Fossen</h3>
+          <p class="meta">
+            <span>Análise e Desenvolvimento de Sistemas</span>
+            <span>Fev 2025 – Nov 2027 (previsão)</span>
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2>Certificados</h2>
+        <p class="cert-line"><strong>English Master Course | 2024–2025</strong><span>Inglês avançado, 43h</span></p>
+        <p class="cert-line"><strong>Data Structures + Algorithms | 2024</strong><span>BigO, BTree, LinkedList, Graphs, 20h</span></p>
+        <p class="cert-line"><strong>C++ Programming | 2024</strong><span>Low-level, 46h</span></p>
+        <p class="cert-line"><strong>Web Developer Bootcamp | 2023–2024</strong><span>HTML, RESTful, Express, React, 74h</span></p>
+        <p class="cert-line"><strong>Complementares | 2022–2023</strong><span>Python, Git/GitHub, Linux, Arquitetura de Computadores, TDD, IA Generativa</span></p>
+      </section>
+    </main>
+  </body>
+</html>

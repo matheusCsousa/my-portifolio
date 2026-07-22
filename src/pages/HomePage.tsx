@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import backgroundImage from "../assets/image.jpeg";
-import { ArrowRightIcon, PlusIcon } from "../components/Icons";
+import backgroundImage from "../assets/image.webp";
+import { ArrowRightIcon } from "../components/Icons";
 import { useInView } from "../hooks/useInView";
+import { featuredProjects } from "../data/projects";
 
 interface SkillItem {
   name: string;
@@ -31,36 +32,6 @@ function Reveal({
     <div ref={ref} className={`reveal ${delay} ${isInView ? "visible" : ""}`}>
       {children}
     </div>
-  );
-}
-
-function StatCounter({ value }: { value: number }) {
-  const { ref, isInView } = useInView();
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (!isInView) return;
-
-    let frame = 0;
-    const totalFrames = 36;
-    const interval = window.setInterval(() => {
-      frame += 1;
-      const progress = 1 - Math.pow(1 - frame / totalFrames, 3);
-      setCount(Math.round(value * progress));
-
-      if (frame >= totalFrames) {
-        setCount(value);
-        window.clearInterval(interval);
-      }
-    }, 24);
-
-    return () => window.clearInterval(interval);
-  }, [isInView, value]);
-
-  return (
-    <span ref={ref} className="inline-block tabular-nums">
-      {count}
-    </span>
   );
 }
 
@@ -212,12 +183,40 @@ export default function HomePage() {
     },
   ];
 
-  const featuredKeys = ["anki", "firstgameengine", "gameoflife", "petadopt"];
   const stats = [
-    { value: 6, suffix: "+", label: t("home.stats.projects") },
     { value: t("home.stats.systems_value"), label: t("home.stats.systems") },
-    { value: t("home.stats.quality_value"), label: t("home.stats.quality") },
+    { value: t("home.stats.fullstack_value"), label: t("home.stats.fullstack") },
+    { value: t("home.stats.architecture_value"), label: t("home.stats.architecture") },
   ];
+  const learningItems = t("home.learning.items", {
+    returnObjects: true,
+  }) as string[];
+  const educationItems = t("home.education.items", {
+    returnObjects: true,
+  }) as string[];
+  const bookItems = t("home.books.items", {
+    returnObjects: true,
+  }) as string[];
+  const projectLabels: Record<string, string> = {
+    anki: "Rust + React",
+    petadopt: "PHP + MySQL",
+    firstgameengine: "C++ + OpenGL",
+  };
+  const projectLinks: Record<string, string> = {
+    anki: "Anki-my",
+    petadopt: "pet-adopt-system",
+    firstgameengine: "FirstGameEngine",
+  };
+  const projectSlugByKey: Record<string, string> = {
+    anki: "anki-my",
+    petadopt: "pet-adoption-system",
+    firstgameengine: "first-game-engine",
+  };
+  const iconMap: Record<string, string> = {
+    anki: "AK",
+    petadopt: "PA",
+    firstgameengine: "GE",
+  };
 
   return (
     <main className="relative min-h-screen w-full overflow-hidden px-6 py-12 md:py-24">
@@ -261,8 +260,8 @@ export default function HomePage() {
                   <ArrowRightIcon className="w-4 h-4 group-hover:translate-x-1 transition duration-300" />
                 </Link>
                 <a
-                  href="/matheus-cv.txt"
-                  download="matheus-cv.txt"
+                  href={`/${t("nav.resume_file")}`}
+                  download={t("nav.resume_file")}
                   className="rounded-full border border-teal-500/30 bg-teal-500/5 px-6 py-3 font-semibold text-teal-300 hover:text-teal-200 hover:bg-teal-500/10 active:scale-95 transition"
                 >
                   {t("home.resume_button")}
@@ -303,13 +302,27 @@ export default function HomePage() {
         {/* ABOUT / STATS SECTION */}
         <Reveal>
           <section className="mb-24 rounded-3xl border border-white/5 bg-slate-900/20 p-6 md:p-8 backdrop-blur-sm">
-            <div className="mb-8 text-center md:text-left">
+            <div className="mb-8 grid gap-8 md:grid-cols-12 md:text-left">
+              <div className="text-center md:col-span-7 md:text-left">
               <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-white mb-2">
                 {t("home.about_title")}
               </h2>
               <p className="text-slate-400 max-w-2xl">
                 {t("home.about_description")}
               </p>
+              </div>
+              <div className="rounded-2xl border border-white/5 bg-slate-950/50 p-5 md:col-span-5">
+                <h3 className="mb-3 text-lg font-bold text-white">
+                  {t("home.education.title")}
+                </h3>
+                <ul className="space-y-2">
+                  {educationItems.map((item) => (
+                    <li key={item} className="text-sm leading-relaxed text-slate-400">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
             <div className="grid gap-4 sm:grid-cols-3">
               {stats.map((stat) => (
@@ -317,21 +330,54 @@ export default function HomePage() {
                   key={stat.label}
                   className="rounded-2xl border border-white/5 bg-slate-950/50 p-5 text-center"
                 >
-                  <div className="text-3xl md:text-4xl font-extrabold text-teal-300">
-                    {typeof stat.value === "number" ? (
-                      <>
-                        <StatCounter value={stat.value} />
-                        {stat.suffix}
-                      </>
-                    ) : (
-                      stat.value
-                    )}
+                  <div className="text-2xl md:text-3xl font-extrabold text-teal-300">
+                    {stat.value}
                   </div>
                   <p className="mt-2 text-sm font-medium text-slate-400">
                     {stat.label}
                   </p>
                 </div>
               ))}
+            </div>
+          </section>
+        </Reveal>
+
+        {/* LEARNING SECTION */}
+        <Reveal>
+          <section className="mb-24 grid gap-8 md:grid-cols-2">
+            <div className="rounded-3xl border border-white/5 bg-slate-900/20 p-6 md:p-8">
+              <h2 className="mb-4 text-2xl font-bold tracking-tight text-white">
+                {t("home.learning.title")}
+              </h2>
+              <p className="mb-6 text-sm leading-relaxed text-slate-400">
+                {t("home.learning.description")}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {learningItems.map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-teal-500/20 bg-teal-500/5 px-3 py-1 text-xs font-semibold text-teal-300"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="rounded-3xl border border-white/5 bg-slate-900/20 p-6 md:p-8">
+              <h2 className="mb-4 text-2xl font-bold tracking-tight text-white">
+                {t("home.books.title")}
+              </h2>
+              <p className="mb-6 text-sm leading-relaxed text-slate-400">
+                {t("home.books.description")}
+              </p>
+              <ul className="space-y-3">
+                {bookItems.map((item) => (
+                  <li key={item} className="flex gap-3 text-sm text-slate-400">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-400" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </section>
         </Reveal>
@@ -403,65 +449,46 @@ export default function HomePage() {
           </div>
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {featuredKeys.map((key) => (
+            {featuredProjects.map((project) => (
               <div
-                key={key}
+                key={project.key}
                 className="group flex flex-col justify-between rounded-2xl border border-white/5 bg-slate-900/20 hover:bg-slate-900/50 p-6 backdrop-blur-sm transition duration-300"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <span className="text-xs font-semibold tracking-wider text-teal-400 uppercase">
-                      {key === "anki"
-                        ? "Rust + React"
-                        : key === "firstgameengine"
-                          ? "C++ + OpenGL"
-                          : key === "gameoflife"
-                            ? "C++ + Raylib"
-                            : "Web Fullstack"}
+                      {projectLabels[project.key]}
+                    </span>
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/5 bg-slate-950 text-xs font-bold text-teal-300">
+                      {iconMap[project.key]}
                     </span>
                   </div>
                   <h3 className="text-xl font-bold text-white mb-2 group-hover:text-teal-300 transition">
-                    {t(`projects.projects_list.${key}.title`)}
+                    {t(`projects.projects_list.${project.key}.title`)}
                   </h3>
                   <p className="text-sm text-slate-400 leading-relaxed mb-6">
-                    {t(`projects.projects_list.${key}.description`)}
+                    {t(`projects.projects_list.${project.key}.description`)}
                   </p>
                 </div>
-                <a
-                  href={`https://github.com/matheusCsousa/${
-                    key === "firstgameengine"
-                      ? "FirstGameEngine"
-                      : key === "gameoflife"
-                        ? "Game-of-Life"
-                        : key === "petadopt"
-                          ? "pet-adopt-system"
-                          : "Anki-my"
-                  }`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-1.5 text-sm font-semibold text-teal-400 hover:text-teal-300 transition"
-                >
-                  <span>{t("projects.projects_list.github_link")}</span>
-                  <ArrowRightIcon className="w-4 h-4 group-hover:translate-x-1 transition duration-300" />
-                </a>
+                <div className="flex flex-wrap gap-3">
+                  <Link
+                    to={`/projects/${projectSlugByKey[project.key]}`}
+                    className="flex items-center space-x-1.5 text-sm font-semibold text-teal-400 hover:text-teal-300 transition"
+                  >
+                    <span>{t("projects.case_study")}</span>
+                    <ArrowRightIcon className="w-4 h-4 group-hover:translate-x-1 transition duration-300" />
+                  </Link>
+                  <a
+                    href={`https://github.com/matheusCsousa/${projectLinks[project.key]}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-semibold text-slate-500 transition hover:text-slate-300"
+                  >
+                    {t("projects.projects_list.github_link")}
+                  </a>
+                </div>
               </div>
             ))}
-
-            {/* OPEN SPACE / COLLABORATION CARD */}
-            <Link
-              to="/contact"
-              className="group flex flex-col items-center justify-center rounded-2xl border-2 border-dashed border-slate-800 bg-slate-950/40 hover:border-teal-500/40 hover:bg-teal-500/5 p-8 transition duration-300 text-center min-h-[220px]"
-            >
-              <div className="rounded-full bg-slate-900 group-hover:bg-teal-500 group-hover:text-slate-950 p-4 border border-white/5 transition duration-300 mb-4 text-teal-400">
-                <PlusIcon className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold text-white mb-2">
-                {t("projects.projects_list.new_project.title")}
-              </h3>
-              <p className="text-xs text-slate-500 max-w-[200px]">
-                {t("projects.projects_list.new_project.description")}
-              </p>
-            </Link>
           </div>
           </section>
         </Reveal>

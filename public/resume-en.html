@@ -1,0 +1,251 @@
+<!-- 
+  RESUME — HOW TO UPDATE THE PDF
+  ==============================
+  1. Edit this HTML file directly.
+  2. Open it in a browser (double-click, or your local dev server).
+  3. Ctrl+P (Cmd+P on Mac) to print.
+  4. Destination: "Save as PDF".
+  5. Settings: Paper size A4, Margins: None, uncheck "Headers and footers",
+     check "Background graphics" if available.
+  6. Save as matheus-cv-en.pdf.
+
+  THINGS MARKED [in brackets] ARE PLACEHOLDERS — fill in real dates/numbers
+  before sending this out. Search for "[" to find them all.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matheus Correia de Sousa Resume</title>
+    <style>
+      :root {
+        --ink: #111827;
+        --muted: #4b5563;
+        --line: #d1d5db;
+        --accent: #0f766e;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11pt;
+        line-height: 1.42;
+        background: #f8fafc;
+      }
+
+      main {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0 auto;
+        padding: 18mm;
+        background: #ffffff;
+      }
+
+      header {
+        border-bottom: 2px solid var(--line);
+        padding-bottom: 12px;
+        margin-bottom: 16px;
+      }
+
+      h1 {
+        margin: 0 0 4px;
+        font-size: 25pt;
+      }
+
+      h2 {
+        margin: 18px 0 8px;
+        color: var(--accent);
+        font-size: 12pt;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+      }
+
+      h3 {
+        margin: 0 0 3px;
+        font-size: 11.5pt;
+      }
+
+      p {
+        margin: 0 0 8px;
+      }
+
+      ul {
+        margin: 6px 0 0 18px;
+        padding: 0;
+      }
+
+      li {
+        margin-bottom: 4px;
+      }
+
+      .subtitle {
+        color: var(--muted);
+        font-size: 12pt;
+        font-weight: 700;
+      }
+
+      .contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 14px;
+        color: var(--muted);
+        font-size: 9.5pt;
+        margin-top: 8px;
+      }
+
+      .skill-line {
+        margin-bottom: 6px;
+        font-size: 10.5pt;
+      }
+
+      .skill-line strong {
+        display: inline-block;
+        min-width: 90px;
+      }
+
+      .item {
+        break-inside: avoid;
+        margin-bottom: 12px;
+      }
+
+      .meta {
+        color: var(--muted);
+        font-size: 9.5pt;
+        font-weight: 700;
+        margin-bottom: 4px;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+      }
+
+      .placeholder {
+        color: #b91c1c;
+        font-weight: 700;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      @media print {
+        body {
+          background: #ffffff;
+        }
+
+        main {
+          width: auto;
+          min-height: auto;
+          margin: 0;
+        }
+
+        .placeholder {
+          color: var(--ink);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Matheus Correia de Sousa</h1>
+        <p class="subtitle">
+          Software Developer focused on systems programming, full-stack
+          applications, and clean, maintainable code.
+        </p>
+        <div class="contact">
+          <span>Brazil / Remote</span>
+          <span><a href="mailto:matheuscds.contato@gmail.com">matheuscds.contato@gmail.com</a></span>
+          <span><a href="https://www.linkedin.com/in/matheus-correia-de-sousa">linkedin.com/in/matheus-correia-de-sousa</a></span>
+          <span><a href="https://github.com/matheusCsousa">github.com/matheusCsousa</a></span>
+        </div>
+      </header>
+
+      <section>
+        <h2>Profile</h2>
+        <p>
+          Systems Analysis and Development student at Fatec Jundiaí Ary Fossen.
+          I build practical software spanning systems programming, full-stack
+          web, and graphics: Rust services, React frontends, and C++/OpenGL
+          rendering work. Drawn to understanding how software works under the
+          hood, from rendering pipelines to the internals of the frameworks I
+          build with.
+        </p>
+      </section>
+
+      <section>
+        <h2>Core Skills</h2>
+        <p class="skill-line"><strong>Systems:</strong> C, C++, Rust, OpenGL, CMake, Linux</p>
+        <p class="skill-line"><strong>Web:</strong> React, TypeScript, JavaScript, Node.js, Express</p>
+        <p class="skill-line"><strong>Databases:</strong> PostgreSQL, MySQL, MongoDB</p>
+        <p class="skill-line"><strong>Tools:</strong> Git, GitHub, Docker</p>
+        <p class="skill-line"><strong>Practices:</strong> Clean Architecture, TDD, RESTful API design</p>
+      </section>
+
+      <section>
+        <h2>Selected Projects</h2>
+
+        <div class="item">
+          <h3>Anki My</h3>
+          <p class="meta">
+            <span>React, Rust (Rocket), PostgreSQL, JWT</span>
+            <span>Jul 2025 – Present</span>
+          </p>
+          <ul>
+            <li>Full-stack spaced-repetition flashcard app: React frontend, Rust/Rocket backend, JWT-based authentication, PostgreSQL persistence.</li>
+            <li>Backend handles spaced-repetition scheduling for card reviews, exposed to the frontend through the Rocket API.</li>
+            <li>Consolidated frontend and backend into a single monorepo (git subtree) for unified versioning.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <h3>Pet Adoption System</h3>
+          <p class="meta">
+            <span>PHP (vanilla), MySQL</span>
+            <span>May 2026</span>
+          </p>
+          <ul>
+            <li>Full-stack system for cataloging adoptable pets and managing adoption-interest submissions, built with vanilla PHP (no framework) and MySQL.</li>
+            <li>Server-side form handling, validation, and data persistence implemented directly in PHP.</li>
+            <li>Handles pet records (species, age, adoption status) with structured data entry directly through PHP forms.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <h3>First Game Engine</h3>
+          <p class="meta">
+            <span>C++, OpenGL, GLFW, GLEW, GLM</span>
+            <span>Apr 2026 – Present</span>
+          </p>
+          <ul>
+            <li>Custom 3D engine built from scratch to study rendering pipelines and engine architecture.</li>
+            <li>Implemented a first-person camera system with deltaTime-scaled rotation for frame-rate-independent movement.</li>
+            <li>Uses vcpkg for dependency management and CMake + CPack for cross-platform builds.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+        <div class="item">
+          <h3>Fatec Jundiaí Ary Fossen</h3>
+          <p class="meta">
+            <span>Systems Analysis and Development</span>
+            <span>Feb 2025 – Nov 2027 (expected)</span>
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

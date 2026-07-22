@@ -4,14 +4,15 @@
     "projects": "Projects",
     "contact": "Contact",
     "resume": "Download CV",
+    "resume_file": "matheus-cv-en.pdf",
     "menu": "Menu",
     "close": "Close"
   },
   "home": {
     "title": "Hi, I'm Matheus",
-    "subtitle": "Software Engineer & Low-Level Developer",
+    "subtitle": "Software developer focused on systems programming, full-stack applications, and clean, maintainable code.",
     "availability": "Available for Collaboration",
-    "description": "Systems Analysis and Development student at Fatec Jundiaí, focused on software engineering and low-level programming. I enjoy building things from scratch, from web apps to compilers and graphics programs.",
+    "description": "I build practical software with attention to architecture, performance, and maintainability. My work ranges from Rust desktop tools and full-stack web systems to C++ graphics and engine experiments.",
     "projects_button": "Explore My Work",
     "contact_button": "Get in Touch",
     "resume_button": "Download CV",
@@ -26,47 +27,182 @@
     },
     "view_all_projects": "View All Projects →",
     "about_title": "What I Bring",
-    "about_description": "I combine systems programming fundamentals with practical full-stack delivery, and I actively study engineering books such as Clean Code, Clean Architecture, The Pragmatic Programmer, and others to sharpen how I design and maintain software.",
+    "about_description": "I combine systems programming fundamentals with practical full-stack delivery, and I actively study software engineering books to sharpen how I design and maintain code.",
+    "education": {
+      "title": "Education",
+      "items": [
+        "Systems Analysis and Development, Fatec Jundiaí",
+        "Focused on software engineering, databases, web development, and systems fundamentals"
+      ]
+    },
+    "learning": {
+      "title": "Currently Learning",
+      "description": "I keep a focused learning path around deeper engineering fundamentals and projects that force me to understand how software works under the hood.",
+      "items": ["Rust", "Compilers", "Clean Architecture", "OpenGL", "Systems Design"]
+    },
+    "books": {
+      "title": "Engineering Study",
+      "description": "I use books as a way to build better judgment, not just collect theory.",
+      "items": [
+        "Clean Code and Clean Architecture",
+        "The Pragmatic Programmer",
+        "Refactoring, design principles, and maintainability topics"
+      ]
+    },
     "stats": {
-      "projects": "Projects Built",
-      "systems": "Systems Foundations",
+      "systems": "Systems Programming",
       "systems_value": "C/C++ & Rust",
-      "quality": "Code Quality Focus",
-      "quality_value": "Books & Practice"
+      "fullstack": "Full-Stack Apps",
+      "fullstack_value": "React & Node",
+      "architecture": "Clean Architecture",
+      "architecture_value": "Books & Practice"
     }
   },
   "projects": {
     "title": "My Projects",
-    "subtitle": "A collection of systems, engines, and web apps I've built.",
+    "subtitle": "Three larger projects that show how I approach product thinking, systems work, and full-stack delivery.",
     "filter_all": "All",
     "filter_web": "Web / Fullstack",
     "filter_systems": "Systems / C++ / Rust",
+    "case_study": "View Case Study",
+    "back_to_projects": "Back to projects",
+    "not_found_title": "Project not found",
+    "problem_title": "Problem",
+    "focus_title": "Technical Focus",
+    "features_title": "Main Features",
+    "learning_title": "What I Practiced",
     "contact_button": "Contact Me",
     "home_button": "Home",
     "projects_list": {
       "anki": {
         "title": "Anki My",
-        "description": "A modern spaced-repetition flashcard application built with React and Rust. Features offline-first support and efficient learning algorithms."
+        "type": "Full-stack web application",
+        "description": "A self-hosted flashcard application inspired by Anki, built with React and TypeScript on the frontend and a Rust (Rocket) REST API backend.",
+        "summary": "Anki My is a web study tool built to explore how a polished frontend can interact with a high-performance Rust backend for state and data management.",
+        "problem": "Studying with flashcards requires dynamic deck management, stable server-side persistence, and a low-friction interface. The project focuses on creating a secure, self-hosted spaced repetition system.",
+        "focus": "Rust backend APIs, PostgreSQL database integration (SQLx), JWT authentication, React UI, and a clear separation between frontend and backend services.",
+        "features": [
+          "JWT authentication (register/login) with bcrypt password hashing",
+          "Create, update, and manage flashcard decks",
+          "Add, edit, and review cards with front/back contents",
+          "Browse shared public decks and filter by name"
+        ],
+        "learnings": [
+          "Structuring a decoupled web application with Rust and React",
+          "Implementing secure JWT auth flows and password encryption",
+          "Managing relational database connections and migrations with SQLx and PostgreSQL"
+        ],
+        "setup": {
+          "title": "Project Architecture & Setup",
+          "quick_start": "Quick Start",
+          "clone": "1. Clone the repository",
+          "backend_title": "2. Backend Configuration (Rust + Rocket)",
+          "backend_desc": "Create a .env file inside the backend directory with your DATABASE_URL and JWT_SECRET:",
+          "backend_note": "The backend API service will listen on http://localhost:8000",
+          "frontend_title": "3. Frontend Configuration (React + TS)",
+          "frontend_desc": "Install dependencies, define the environment variables, and start the development server:",
+          "frontend_note": "The frontend development server will run on http://localhost:5173",
+          "structure": "Project Structure",
+          "layers": "Tech Stack Layers",
+          "layer": "Layer",
+          "technology": "Technology",
+          "layer_frontend": "Frontend",
+          "layer_backend": "Backend",
+          "layer_db": "Database",
+          "layer_auth": "Auth"
+        }
       },
       "firstgameengine": {
         "title": "First Game Engine",
-        "description": "A custom 2D/3D game engine built from scratch using OpenGL, GLFW, and GLEW. Features shader loaders, asset rendering, and collision detection."
-      },
-      "gameoflife": {
-        "title": "Conway's Game of Life",
-        "description": "An interactive, high-performance simulation of Conway's Game of Life in C++ using Raylib for rendering. Supports custom seed shapes and speed controls."
+        "type": "C++ graphics engine",
+        "description": "A custom game engine experiment built from scratch with C++, OpenGL, GLFW, and GLEW to study rendering, shaders, assets, and engine structure.",
+        "summary": "First Game Engine is a low-level C++ project where I explored how rendering systems, shader loading, assets, and engine loops fit together.",
+        "problem": "Game engines hide a lot of complexity. Building a small engine from scratch helped me understand the rendering pipeline, application loop, and how different systems need to communicate.",
+        "focus": "C++ architecture, OpenGL rendering, shader management, asset rendering, input, and collision-oriented foundations.",
+        "features": [
+          "OpenGL rendering pipeline with VAO, VBO, EBO and shader management",
+          "First-person free camera with mouse look and delta-time movement",
+          "Scene and entity system with per-entity transform (position, rotation, scale)",
+          "Input system with key states (pressed / held / released) and mouse tracking",
+          "Abstract Logic interface to decouple game logic from the engine loop",
+          "CMake build system with each module compiled as static libraries"
+        ],
+        "learnings": [
+          "Working closer to graphics APIs and memory constraints",
+          "Organizing C++ code for systems that grow over time",
+          "Understanding how rendering, input, and update loops interact"
+        ]
       },
       "petadopt": {
-        "title": "Pet Adoption System",
-        "description": "A full-stack pet adoption management web app featuring user profiles, pet cataloging, adoption workflow matching, and secure forms."
-      },
-      "compiler_rust": {
-        "title": "Rust Compiler",
-        "description": "A compiler developed in Rust that parses a simple custom language and generates x86-64 assembly as the intermediate representation."
-      },
-      "compiler_cpp": {
-        "title": "C++ Compiler",
-        "description": "A compiler written in C++ featuring scanner, parser, AST generation, and basic code execution for a lightweight programming language."
+        "title": "Adote um Pet (NGO Pet Adoption Platform)",
+        "type": "PHP Web Application",
+        "description": "A PHP + MySQL web application that manages the full pet adoption workflow for an animal shelter/NGO: registering rescued animals, publishing them for adoption, and routing adoption requests through a staff approval process.",
+        "summary": "Pet Adoption System is a PHP web application managing user flows, pet profiles, and multi-user adoption workflows with direct database queries and robust session constraints.",
+        "problem": "Shelter management requires coordination between staff and adopters, secure routing, role boundaries, and transactions to prevent concurrent requests for the same pet.",
+        "focus": "Front-controller routing, Table Data Gateway pattern, raw SQL transactions with row-level locks, session-based access guards, and security hardening.",
+        "features": [
+          "Unified routing and output buffering layout template",
+          "Table Data Gateway classes abstracting SQL operations",
+          "Explicit database transaction flow with SELECT ... FOR UPDATE locks",
+          "Dynamic role-based access control and session verification guards"
+        ],
+        "learnings": [
+          "Implementing transaction boundaries and row-level locks in relational databases",
+          "Designing clean OOP database access using the Table Data Gateway pattern",
+          "Enforcing role-aware access controls and secure session management in raw PHP"
+        ],
+        "setup": {
+          "title": "Architecture & Technical Deep-Dive",
+          "routing_title": "1. Router & Front Controller",
+          "routing_desc": "The application handles requests through a single front controller (index.php), routing query parameters against an allow-list of page actions and capturing outputs via PHP's output buffering:",
+          "gateway_title": "2. Table Data Gateway Pattern",
+          "gateway_desc": "Every database entity has a corresponding Gateway class that encapsulates all SQL operations, maintaining a clean boundary between page logic and queries:",
+          "gateway_headers": ["Gateway Class", "Database Table", "Core Responsibility"],
+          "gateway_rows": [
+            ["AbrigoGateway", "Abrigo", "Shelters listing and ID retrieval (read-only)"],
+            ["FuncionarioGateway", "Funcionario", "Staff accounts, verification, and credentials management"],
+            ["AdotanteGateway", "Adotante", "Adopter accounts, verification, and profile management"],
+            ["AnimalGateway", "Animal", "Pet CRUD, status tracking, and query filters"],
+            ["FotoGateway", "Foto", "Pet images (handles BLOB database retrieval and URL redirects)"],
+            ["VacinaGateway", "Vacina / Aplica", "Vaccine catalog management and pet medical history tracking"],
+            ["AdocaoGateway", "Adocao", "Adoption request application, status flow, and transactions"]
+          ],
+          "workflow_title": "3. Adoption Workflow & Transactions",
+          "workflow_desc": "To prevent race conditions where multiple adopters request the same animal concurrently, the system uses PDO transactions paired with SELECT ... FOR UPDATE row-level locks:",
+          "workflow_steps": [
+            "createRequest(): locks the animal, creates the request, and sets its status to Em_adocao.",
+            "approve(): approves one request, cancels the pending ones, and marks the animal as Adotado.",
+            "cancel(): cancels the request and returns the animal to Disponivel only when no other active request exists."
+          ],
+          "access_title": "4. Access Control Matrix",
+          "access_desc": "Access is protected using native PHP session filters (exigirLogin / exigirFuncionario) defined in src/auth.php:",
+          "access_headers": ["Route (?page=)", "Access Permission", "Active Guard Filter"],
+          "access_rows": [
+            ["home, listar_pets, detalhes_pet, login, cadastro", "Anyone (Public)", "None"],
+            ["perfil, minhas_adocoes", "Any logged-in user", "exigirLogin() (minhas_adocoes further requires adopter role)"],
+            ["cadastrar_pet, anunciar_pet, gerenciar_pets, validar_adocoes", "Shelter staff only", "exigirFuncionario()"]
+          ],
+          "install_title": "Installation & Seed Data",
+          "install_desc": "Follow these steps to set up and run the application locally:",
+          "demo_title": "Local Demo Accounts",
+          "demo_desc": "The seed data (ong_adocao.sql) provides the following demo accounts for testing:",
+          "demo_headers": ["User Type", "Email Address", "Default Password"],
+          "demo_rows": [
+            ["Staff (Administrador)", "ana@ong.com", "ana123"],
+            ["Staff (Atendente)", "carlos@ong.com", "carlos123"],
+            ["Adopter", "joao@email.com", "07092002"],
+            ["Adopter", "fernanda@email.com", "fernanda123"]
+          ],
+          "limits_title": "Known Limitations & Roadmap",
+          "limits_desc": "Several architectural improvements are suggested to modernize the application codebase:",
+          "limits_list": [
+            "Password Hashing: Currently hashes passwords using MySQL's PASSWORD() function, which is deprecated in modern MySQL 8.x. Recommended: migration to PHP's secure password_hash() / password_verify().",
+            "Hardcoded Credentials: DB config is hardcoded in Database.php. Recommended: externalize settings to config.php or environment variables.",
+            "Placeholder 404: The 404 page is empty and does not render. The router silently falls back to home.",
+            "No CSRF Tokens: POST forms lack security tokens. Recommended: add anti-CSRF token verification.",
+            "Photo Storage: Stores photos as binary LONGBLOBs. Recommended: store files on disk or cloud storage and save file paths in the database."
+          ]
+        }
       },
       "new_project": {
         "title": "Your Project Here?",
@@ -74,7 +210,17 @@
       },
       "github_link": "View on GitHub",
       "collab_link": "Let's Collaborate"
-    }
+    },
+    "architecture_title": "Architecture & Systems",
+    "structure_title": "Project Structure",
+    "architecture_subtitle": "Core Architecture",
+    "architecture_desc": "The engine enforces a clean separation between core systems and application logic through the Core::Logic interface. The game loop in Core::Game calls onUpdate() and onRender() each frame, which the game application implements.",
+    "camera_system_title": "Camera & Input Systems",
+    "camera_desc": "Core::Graphics::Camera computes view and projection matrices, while FreeCam extends it with WASD + QE movement and mouse look controls.",
+    "input_desc": "Core::Input tracks three key states per key (pressed, held, released) and calculates frame delta time for frame-rate-independent movement.",
+    "build_run_title": "Building & Running",
+    "new_app_title": "Creating a New Application",
+    "new_app_desc": "To build a game with this engine, subclass Core::Logic, configure the GameSpecs, push the logic and run the game loop:"
   },
   "contact": {
     "contacts": {
@@ -93,6 +239,8 @@
         "url": "mailto:matheuscds.contato@gmail.com",
         "text": "matheuscds.contato@gmail.com"
       },
+      "copy_email": "Copy email",
+      "email_copied": "Email copied",
       "linkedin": {
         "label": "LinkedIn",
         "url": "https://www.linkedin.com/in/matheus-correia-de-sousa",
