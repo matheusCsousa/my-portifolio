@@ -7,6 +7,7 @@ export interface FeaturedProject {
   techs: string[];
   githubName: string;
   accent: string;
+  liveUrl?: string;
 }
 
 export const featuredProjects: FeaturedProject[] = [
@@ -16,6 +17,7 @@ export const featuredProjects: FeaturedProject[] = [
     category: "web",
     techs: ["React", "Rust", "Rocket", "PostgreSQL"],
     githubName: "Anki-my",
+    liveUrl: "https://anki-my.onrender.com/app",
     accent: "from-cyan-500/20 to-teal-500/10",
   },
   {

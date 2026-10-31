@@ -68,6 +68,16 @@ export default function ProjectDetailPage() {
             <p className="text-lg leading-relaxed text-slate-300">
               {t(`projects.projects_list.${project.key}.summary`)}
             </p>
+            {project.liveUrl && (
+              <a
+                className="button mt-6"
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("projects.live_app")} ↗
+              </a>
+            )}
           </div>
         </section>
 
