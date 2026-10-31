@@ -49,6 +49,16 @@ export default function ProjectShowcases() {
               ))}
             </div>
             <div className="project-links">
+              {project.liveUrl && (
+                <a
+                  className="button"
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t("projects.live_app")} ↗
+                </a>
+              )}
               <Link className="button" to={`/projects/${project.slug}`}>
                 {t("projects.case_study")} ↗
               </Link>

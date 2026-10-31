@@ -84,7 +84,7 @@
         "title": "Anki My",
         "type": "Aplicação web full-stack",
         "description": "Um aplicativo auto-hospedado de flashcards inspirado no Anki, construído com React e TypeScript no frontend e um backend REST API em Rust (Rocket).",
-        "summary": "Anki My é uma ferramenta web de estudos criada para explorar a integração de uma interface moderna e responsiva com um backend de alta performance em Rust.",
+        "summary": "Uma aplicação de flashcards para criar baralhos, revisar cartões e compartilhar materiais de estudo, com progresso salvo para cada usuário.",
         "problem": "Estudar com flashcards exige gerenciamento dinâmico de baralhos, persistência estável no servidor e uma interface sem fricção. O projeto foca em criar um sistema de repetição espaçada seguro e auto-hospedado.",
         "focus": "APIs de backend em Rust, banco de dados PostgreSQL (SQLx), autenticação JWT, interface em React e uma separação clara de serviços.",
         "features": [
@@ -295,7 +295,8 @@
     "input_desc": "Core::Input rastreia três estados de tecla (pressed, held, released) e calcula o delta time para que o movimento seja consistente independente da taxa de quadros.",
     "build_run_title": "Compilação & Execução",
     "new_app_title": "Criando uma Nova Aplicação",
-    "new_app_desc": "Para criar um jogo com a engine, herde de Core::Logic, configure as GameSpecs, adicione a lógica e inicie o loop principal:"
+    "new_app_desc": "Para criar um jogo com a engine, herde de Core::Logic, configure as GameSpecs, adicione a lógica e inicie o loop principal:",
+    "live_app": "Abrir aplicativo"
   },
   "contact": {
     "contacts": {
