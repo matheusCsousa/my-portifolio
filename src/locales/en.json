@@ -38,7 +38,13 @@
     "learning": {
       "title": "Currently Learning",
       "description": "I keep a focused learning path around deeper engineering fundamentals and projects that force me to understand how software works under the hood.",
-      "items": ["Rust", "Compilers", "Clean Architecture", "OpenGL", "Systems Design"]
+      "items": [
+        "Rust",
+        "Compilers",
+        "Clean Architecture",
+        "OpenGL",
+        "Systems Design"
+      ]
     },
     "books": {
       "title": "Engineering Study",
@@ -157,15 +163,47 @@
           "routing_desc": "The application handles requests through a single front controller (index.php), routing query parameters against an allow-list of page actions and capturing outputs via PHP's output buffering:",
           "gateway_title": "2. Table Data Gateway Pattern",
           "gateway_desc": "Every database entity has a corresponding Gateway class that encapsulates all SQL operations, maintaining a clean boundary between page logic and queries:",
-          "gateway_headers": ["Gateway Class", "Database Table", "Core Responsibility"],
+          "gateway_headers": [
+            "Gateway Class",
+            "Database Table",
+            "Core Responsibility"
+          ],
           "gateway_rows": [
-            ["AbrigoGateway", "Abrigo", "Shelters listing and ID retrieval (read-only)"],
-            ["FuncionarioGateway", "Funcionario", "Staff accounts, verification, and credentials management"],
-            ["AdotanteGateway", "Adotante", "Adopter accounts, verification, and profile management"],
-            ["AnimalGateway", "Animal", "Pet CRUD, status tracking, and query filters"],
-            ["FotoGateway", "Foto", "Pet images (handles BLOB database retrieval and URL redirects)"],
-            ["VacinaGateway", "Vacina / Aplica", "Vaccine catalog management and pet medical history tracking"],
-            ["AdocaoGateway", "Adocao", "Adoption request application, status flow, and transactions"]
+            [
+              "AbrigoGateway",
+              "Abrigo",
+              "Shelters listing and ID retrieval (read-only)"
+            ],
+            [
+              "FuncionarioGateway",
+              "Funcionario",
+              "Staff accounts, verification, and credentials management"
+            ],
+            [
+              "AdotanteGateway",
+              "Adotante",
+              "Adopter accounts, verification, and profile management"
+            ],
+            [
+              "AnimalGateway",
+              "Animal",
+              "Pet CRUD, status tracking, and query filters"
+            ],
+            [
+              "FotoGateway",
+              "Foto",
+              "Pet images (handles BLOB database retrieval and URL redirects)"
+            ],
+            [
+              "VacinaGateway",
+              "Vacina / Aplica",
+              "Vaccine catalog management and pet medical history tracking"
+            ],
+            [
+              "AdocaoGateway",
+              "Adocao",
+              "Adoption request application, status flow, and transactions"
+            ]
           ],
           "workflow_title": "3. Adoption Workflow & Transactions",
           "workflow_desc": "To prevent race conditions where multiple adopters request the same animal concurrently, the system uses PDO transactions paired with SELECT ... FOR UPDATE row-level locks:",
@@ -176,22 +214,58 @@
           ],
           "access_title": "4. Access Control Matrix",
           "access_desc": "Access is protected using native PHP session filters (exigirLogin / exigirFuncionario) defined in src/auth.php:",
-          "access_headers": ["Route (?page=)", "Access Permission", "Active Guard Filter"],
+          "access_headers": [
+            "Route (?page=)",
+            "Access Permission",
+            "Active Guard Filter"
+          ],
           "access_rows": [
-            ["home, listar_pets, detalhes_pet, login, cadastro", "Anyone (Public)", "None"],
-            ["perfil, minhas_adocoes", "Any logged-in user", "exigirLogin() (minhas_adocoes further requires adopter role)"],
-            ["cadastrar_pet, anunciar_pet, gerenciar_pets, validar_adocoes", "Shelter staff only", "exigirFuncionario()"]
+            [
+              "home, listar_pets, detalhes_pet, login, cadastro",
+              "Anyone (Public)",
+              "None"
+            ],
+            [
+              "perfil, minhas_adocoes",
+              "Any logged-in user",
+              "exigirLogin() (minhas_adocoes further requires adopter role)"
+            ],
+            [
+              "cadastrar_pet, anunciar_pet, gerenciar_pets, validar_adocoes",
+              "Shelter staff only",
+              "exigirFuncionario()"
+            ]
           ],
           "install_title": "Installation & Seed Data",
           "install_desc": "Follow these steps to set up and run the application locally:",
           "demo_title": "Local Demo Accounts",
           "demo_desc": "The seed data (ong_adocao.sql) provides the following demo accounts for testing:",
-          "demo_headers": ["User Type", "Email Address", "Default Password"],
+          "demo_headers": [
+            "User Type",
+            "Email Address",
+            "Default Password"
+          ],
           "demo_rows": [
-            ["Staff (Administrador)", "ana@ong.com", "ana123"],
-            ["Staff (Atendente)", "carlos@ong.com", "carlos123"],
-            ["Adopter", "joao@email.com", "07092002"],
-            ["Adopter", "fernanda@email.com", "fernanda123"]
+            [
+              "Staff (Administrador)",
+              "ana@ong.com",
+              "ana123"
+            ],
+            [
+              "Staff (Atendente)",
+              "carlos@ong.com",
+              "carlos123"
+            ],
+            [
+              "Adopter",
+              "joao@email.com",
+              "07092002"
+            ],
+            [
+              "Adopter",
+              "fernanda@email.com",
+              "fernanda123"
+            ]
           ],
           "limits_title": "Known Limitations & Roadmap",
           "limits_desc": "Several architectural improvements are suggested to modernize the application codebase:",
@@ -257,5 +331,37 @@
     "github": "GitHub",
     "linkedin": "LinkedIn",
     "email": "Email"
+  },
+  "redesign": {
+    "skip": "Skip to content",
+    "language": "Language",
+    "headline": "Thoughtful software,",
+    "headline_em": "from interface to engine.",
+    "intro": "I’m Matheus, a software developer in Brazil building full-stack applications and exploring systems with Rust and C++.",
+    "note": "Made with curiosity.",
+    "selected": "Selected work",
+    "work_title": "Ideas made real.",
+    "work_em": "One project at a time.",
+    "work_intro": "A selection of applications and experiments. Different challenges, the same care for how things work.",
+    "project_anki": "A self-hosted flashcard application connecting a React interface to a Rust backend. Built around decks, reviews, and persistent study data.",
+    "project_petadopt": "Connecting rescued animals with new homes. A PHP application exploring adoption workflows, staff permissions, and database transactions.",
+    "project_firstgameengine": "A look beneath the surface of a game engine. Exploring rendering, shaders, camera controls, and application structure with C++ and OpenGL.",
+    "about": "A little about me",
+    "about_title": "Curious by nature.",
+    "about_em": "An engineer in practice.",
+    "portrait_note": "Hello from Brazil",
+    "exploring": "Currently exploring",
+    "capabilities": "What I build",
+    "capabilities_title": "Across the stack. Under the hood.",
+    "web_title": "Web applications",
+    "web_description": "Interfaces and full-stack workflows that connect people with practical tools.",
+    "systems_title": "Backend & systems",
+    "systems_description": "APIs, persistence, and the engineering decisions that hold applications together.",
+    "graphics_title": "Graphics & experiments",
+    "graphics_description": "Learning how things work by building rendering systems from the ground up.",
+    "next": "Have a project in mind?",
+    "contact_title": "Something worth building?",
+    "contact_em": "Let’s talk.",
+    "copy_failed": "Copy unavailable. Use the email link above."
   }
 }

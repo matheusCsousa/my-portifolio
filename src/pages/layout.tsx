@@ -8,7 +8,7 @@ function Layout() {
   const location = useLocation();
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans">
+    <div className="site-shell">
       <ScrollToTop />
       <Navbar />
       <div className="flex-1 w-full page-enter" key={location.pathname}>
