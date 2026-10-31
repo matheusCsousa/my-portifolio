@@ -19,7 +19,7 @@ export default function ProjectDetailPage() {
 
   if (!project) {
     return (
-      <main className="min-h-screen px-6 py-24">
+      <main id="main-content" className="article-content min-h-screen px-6 py-24">
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="mb-4 text-3xl font-bold text-white">
             {t("projects.not_found_title")}
@@ -44,7 +44,7 @@ export default function ProjectDetailPage() {
   }) as string[];
 
   return (
-    <main className="relative min-h-screen px-6 py-12">
+    <main id="main-content" className="article-content relative min-h-screen px-6 py-12">
       <div className="absolute top-32 right-1/4 -z-10 h-96 w-96 rounded-full bg-teal-500/10 bg-blob" />
 
       <div className="mx-auto max-w-5xl">
