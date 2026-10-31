@@ -296,7 +296,9 @@
     "build_run_title": "Compilação & Execução",
     "new_app_title": "Criando uma Nova Aplicação",
     "new_app_desc": "Para criar um jogo com a engine, herde de Core::Logic, configure as GameSpecs, adicione a lógica e inicie o loop principal:",
-    "live_app": "Abrir aplicativo"
+    "live_app": "Abrir aplicativo",
+    "anki_workspace_alt": "Área de estudos do Anki My com um baralho de exemplo e contagens de revisão salvas.",
+    "anki_workspace_caption": "A área de estudos, com um baralho de exemplo e o progresso de revisão salvo."
   },
   "contact": {
     "contacts": {
