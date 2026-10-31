@@ -761,3 +761,42 @@ em {
 }
 .article-content *, .contact-options > * { min-width: 0; }
 .article-content :is(pre, code) { max-width: 100%; }
+
+/* An abstract personal mark, rather than a placeholder photograph. */
+.about-art {
+  height: 350px;
+  position: relative;
+  overflow: hidden;
+  background-color: #e0e9e0;
+  background-image: linear-gradient(#54745912 1px, transparent 1px), linear-gradient(90deg, #54745912 1px, transparent 1px);
+  background-size: 28px 28px;
+  color: #4d705a;
+}
+.about-art::before {
+  content: '';
+  position: absolute;
+  width: 270px;
+  height: 270px;
+  border: 1px solid #4d705a35;
+  border-radius: 50%;
+  top: -90px;
+  right: -100px;
+}
+.about-art-star {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 90px;
+  line-height: 1;
+}
+.about-art-initials {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-family: Georgia, serif;
+  font-size: clamp(90px, 12vw, 150px);
+  font-style: italic;
+  letter-spacing: -.08em;
+  line-height: 1;
+}
+@media (max-width: 900px) { .about-art { height: 300px; } }
