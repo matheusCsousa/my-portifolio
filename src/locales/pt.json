@@ -38,7 +38,13 @@
     "learning": {
       "title": "Estudando Agora",
       "description": "Mantenho uma trilha de estudo focada em fundamentos mais profundos de engenharia e projetos que me obrigam a entender como o software funciona por baixo.",
-      "items": ["Rust", "Compiladores", "Clean Architecture", "OpenGL", "Design de Sistemas"]
+      "items": [
+        "Rust",
+        "Compiladores",
+        "Clean Architecture",
+        "OpenGL",
+        "Design de Sistemas"
+      ]
     },
     "books": {
       "title": "Estudo de Engenharia",
@@ -158,15 +164,47 @@
           "routing_desc": "A aplicação gerencia requisições por meio de um único front controller (index.php), roteando parâmetros de consulta com base em uma lista de páginas permitidas e capturando saídas via output buffering do PHP:",
           "gateway_title": "2. Padrão Table Data Gateway",
           "gateway_desc": "Cada entidade do banco de dados possui uma classe Gateway correspondente que encapsula todas as operações SQL, mantendo um limite claro entre a lógica da página e as consultas:",
-          "gateway_headers": ["Classe Gateway", "Tabela", "Responsabilidade principal"],
+          "gateway_headers": [
+            "Classe Gateway",
+            "Tabela",
+            "Responsabilidade principal"
+          ],
           "gateway_rows": [
-            ["AbrigoGateway", "Abrigo", "Listagem e busca de abrigos por ID (somente leitura)"],
-            ["FuncionarioGateway", "Funcionario", "Contas de funcionários, autenticação e perfil"],
-            ["AdotanteGateway", "Adotante", "Contas de adotantes, autenticação e perfil"],
-            ["AnimalGateway", "Animal", "CRUD de pets, status e consultas de listagem"],
-            ["FotoGateway", "Foto", "Fotos de pets, com BLOB no banco ou redirecionamento por URL"],
-            ["VacinaGateway", "Vacina / Aplica", "Catálogo de vacinas e histórico de aplicação"],
-            ["AdocaoGateway", "Adocao", "Solicitações de adoção, fluxo de status e transações"]
+            [
+              "AbrigoGateway",
+              "Abrigo",
+              "Listagem e busca de abrigos por ID (somente leitura)"
+            ],
+            [
+              "FuncionarioGateway",
+              "Funcionario",
+              "Contas de funcionários, autenticação e perfil"
+            ],
+            [
+              "AdotanteGateway",
+              "Adotante",
+              "Contas de adotantes, autenticação e perfil"
+            ],
+            [
+              "AnimalGateway",
+              "Animal",
+              "CRUD de pets, status e consultas de listagem"
+            ],
+            [
+              "FotoGateway",
+              "Foto",
+              "Fotos de pets, com BLOB no banco ou redirecionamento por URL"
+            ],
+            [
+              "VacinaGateway",
+              "Vacina / Aplica",
+              "Catálogo de vacinas e histórico de aplicação"
+            ],
+            [
+              "AdocaoGateway",
+              "Adocao",
+              "Solicitações de adoção, fluxo de status e transações"
+            ]
           ],
           "workflow_title": "3. Fluxo de Adoção & Transações",
           "workflow_desc": "Para evitar condições de corrida (race conditions) quando múltiplos adotantes solicitam o mesmo animal simultaneamente, o sistema utiliza transações PDO combinadas com bloqueios de linha SELECT ... FOR UPDATE:",
@@ -177,22 +215,58 @@
           ],
           "access_title": "4. Matriz de Controle de Acesso",
           "access_desc": "O acesso é protegido usando filtros de sessão nativos do PHP (exigirLogin / exigirFuncionario) definidos em src/auth.php:",
-          "access_headers": ["Rota (?page=)", "Permissão", "Guarda aplicada"],
+          "access_headers": [
+            "Rota (?page=)",
+            "Permissão",
+            "Guarda aplicada"
+          ],
           "access_rows": [
-            ["home, listar_pets, detalhes_pet, login, cadastro", "Qualquer pessoa (público)", "Nenhuma"],
-            ["perfil, minhas_adocoes", "Qualquer usuário autenticado", "exigirLogin() — minhas_adocoes também exige perfil de adotante"],
-            ["cadastrar_pet, anunciar_pet, gerenciar_pets, validar_adocoes", "Somente funcionários", "exigirFuncionario()"]
+            [
+              "home, listar_pets, detalhes_pet, login, cadastro",
+              "Qualquer pessoa (público)",
+              "Nenhuma"
+            ],
+            [
+              "perfil, minhas_adocoes",
+              "Qualquer usuário autenticado",
+              "exigirLogin() — minhas_adocoes também exige perfil de adotante"
+            ],
+            [
+              "cadastrar_pet, anunciar_pet, gerenciar_pets, validar_adocoes",
+              "Somente funcionários",
+              "exigirFuncionario()"
+            ]
           ],
           "install_title": "Instalação & Carga de Dados",
           "install_desc": "Siga os passos abaixo para configurar e executar a aplicação localmente:",
           "demo_title": "Contas de Demonstração Locais",
           "demo_desc": "Os dados de semente (ong_adocao.sql) fornecem as seguintes contas para testes locais:",
-          "demo_headers": ["Tipo de usuário", "E-mail", "Senha padrão"],
+          "demo_headers": [
+            "Tipo de usuário",
+            "E-mail",
+            "Senha padrão"
+          ],
           "demo_rows": [
-            ["Funcionária (Administradora)", "ana@ong.com", "ana123"],
-            ["Funcionário (Atendente)", "carlos@ong.com", "carlos123"],
-            ["Adotante", "joao@email.com", "07092002"],
-            ["Adotante", "fernanda@email.com", "fernanda123"]
+            [
+              "Funcionária (Administradora)",
+              "ana@ong.com",
+              "ana123"
+            ],
+            [
+              "Funcionário (Atendente)",
+              "carlos@ong.com",
+              "carlos123"
+            ],
+            [
+              "Adotante",
+              "joao@email.com",
+              "07092002"
+            ],
+            [
+              "Adotante",
+              "fernanda@email.com",
+              "fernanda123"
+            ]
           ],
           "limits_title": "Limitações Conhecidas & Roadmap",
           "limits_desc": "Diversas melhorias arquiteturais são sugeridas para modernizar a base de código da aplicação:",
@@ -258,5 +332,37 @@
     "github": "GitHub",
     "linkedin": "LinkedIn",
     "email": "E-mail"
+  },
+  "redesign": {
+    "skip": "Pular para o conteúdo",
+    "language": "Idioma",
+    "headline": "Software bem pensado,",
+    "headline_em": "da interface ao motor.",
+    "intro": "Sou Matheus, desenvolvedor de software no Brasil. Construo aplicações full-stack e exploro sistemas com Rust e C++.",
+    "note": "Feito com curiosidade.",
+    "selected": "Projetos selecionados",
+    "work_title": "Ideias que ganham forma.",
+    "work_em": "Um projeto de cada vez.",
+    "work_intro": "Uma seleção de aplicações e experimentos. Desafios diferentes, o mesmo cuidado com o funcionamento.",
+    "project_anki": "Uma aplicação de flashcards auto-hospedada que conecta uma interface React a um backend Rust. Com baralhos, revisões e persistência dos dados de estudo.",
+    "project_petadopt": "Conectando animais resgatados a novos lares. Uma aplicação PHP que explora fluxos de adoção, permissões de funcionários e transações no banco de dados.",
+    "project_firstgameengine": "Uma exploração do que acontece dentro de um motor de jogos. Renderização, shaders, controles de câmera e estrutura de aplicações com C++ e OpenGL.",
+    "about": "Um pouco sobre mim",
+    "about_title": "Curioso por natureza.",
+    "about_em": "Engenharia na prática.",
+    "portrait_note": "Olá, direto do Brasil",
+    "exploring": "Explorando agora",
+    "capabilities": "O que construo",
+    "capabilities_title": "Da aplicação aos fundamentos.",
+    "web_title": "Aplicações web",
+    "web_description": "Interfaces e fluxos full-stack que conectam pessoas a ferramentas práticas.",
+    "systems_title": "Backend e sistemas",
+    "systems_description": "APIs, persistência e as decisões de engenharia que sustentam uma aplicação.",
+    "graphics_title": "Gráficos e experimentos",
+    "graphics_description": "Entender como as coisas funcionam construindo sistemas de renderização desde o início.",
+    "next": "Tem um projeto em mente?",
+    "contact_title": "Algo que vale construir?",
+    "contact_em": "Vamos conversar.",
+    "copy_failed": "Não foi possível copiar. Use o link de email acima."
   }
 }
