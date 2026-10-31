@@ -2,7 +2,8 @@ import { Link, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { ArrowRightIcon, ExternalLinkIcon } from "../components/Icons";
 import { getProjectBySlug } from "../data/projects";
-import ankiMyImage from "../assets/anki-my.webp";
+import ankiMyImage from "../assets/anki-my-landing.png";
+import ankiWorkspaceImage from "../assets/anki-my-workspace.png";
 import petAdoptImage from "../assets/pet-adopt.webp";
 import gameEngineImage from "../assets/game-engine.webp";
 
@@ -89,6 +90,22 @@ export default function ProjectDetailPage() {
             className="w-full h-auto object-cover rounded-2xl border border-white/5 hover:scale-[1.005] transition duration-500"
           />
         </div>
+
+        {project.key === "anki" && (
+          <figure className="mb-10 overflow-hidden rounded-3xl border border-white/10 bg-slate-900/10 p-2">
+            <img
+              src={ankiWorkspaceImage}
+              alt={t("projects.anki_workspace_alt")}
+              className="w-full h-auto rounded-2xl border border-white/5"
+              loading="lazy"
+              width="1440"
+              height="1000"
+            />
+            <figcaption className="px-4 py-3 text-sm text-slate-400">
+              {t("projects.anki_workspace_caption")}
+            </figcaption>
+          </figure>
+        )}
 
         <div className="mb-10 flex flex-wrap gap-2">
           {project.techs.map((tech) => (

@@ -295,7 +295,9 @@
     "build_run_title": "Building & Running",
     "new_app_title": "Creating a New Application",
     "new_app_desc": "To build a game with this engine, subclass Core::Logic, configure the GameSpecs, push the logic and run the game loop:",
-    "live_app": "Open live app"
+    "live_app": "Open live app",
+    "anki_workspace_alt": "Anki My study workspace with an example deck and saved review counts.",
+    "anki_workspace_caption": "The study workspace, showing an example deck and saved review progress."
   },
   "contact": {
     "contacts": {
