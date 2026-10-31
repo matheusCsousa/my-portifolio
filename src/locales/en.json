@@ -12,7 +12,7 @@
     "title": "Hi, I'm Matheus",
     "subtitle": "Software developer focused on systems programming, full-stack applications, and clean, maintainable code.",
     "availability": "Available for Collaboration",
-    "description": "I build practical software with attention to architecture, performance, and maintainability. My work ranges from Rust desktop tools and full-stack web systems to C++ graphics and engine experiments.",
+    "description": "I build practical software with attention to architecture, performance, and maintainability. I enjoy solving problems, learning how things work, and turning that understanding into useful experiences.",
     "projects_button": "Explore My Work",
     "contact_button": "Get in Touch",
     "resume_button": "Download CV",
@@ -337,7 +337,7 @@
     "language": "Language",
     "headline": "Thoughtful software,",
     "headline_em": "from interface to engine.",
-    "intro": "I’m Matheus, a software developer in Brazil building full-stack applications and exploring systems with Rust and C++.",
+    "intro": "I’m Matheus, a software developer in Brazil turning ideas into practical, thoughtful applications.",
     "note": "Made with curiosity.",
     "selected": "Selected work",
     "work_title": "Ideas made real.",
@@ -349,7 +349,7 @@
     "about": "A little about me",
     "about_title": "Curious by nature.",
     "about_em": "An engineer in practice.",
-    "portrait_note": "Hello from Brazil",
+    "portrait_note": "Always curious. Always learning.",
     "exploring": "Currently exploring",
     "capabilities": "What I build",
     "capabilities_title": "Across the stack. Under the hood.",
@@ -362,6 +362,7 @@
     "next": "Have a project in mind?",
     "contact_title": "Something worth building?",
     "contact_em": "Let’s talk.",
-    "copy_failed": "Copy unavailable. Use the email link above."
+    "copy_failed": "Copy unavailable. Use the email link above.",
+    "exploring_topics": "Software design · Creative problem-solving · Better user experiences"
   }
 }

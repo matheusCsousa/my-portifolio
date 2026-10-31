@@ -12,7 +12,7 @@
     "title": "Olá, eu sou o Matheus",
     "subtitle": "Desenvolvedor de software focado em programação de sistemas, aplicações full-stack e código limpo e fácil de manter.",
     "availability": "Disponível para Colaborações",
-    "description": "Construo software prático com atenção a arquitetura, performance e manutenibilidade. Meu trabalho passa por ferramentas desktop em Rust, sistemas web full-stack e experimentos gráficos em C++.",
+    "description": "Construo software prático com atenção a arquitetura, performance e manutenibilidade. Gosto de resolver problemas, entender como as coisas funcionam e transformar esse conhecimento em experiências úteis.",
     "projects_button": "Explore Meu Trabalho",
     "contact_button": "Entre em Contato",
     "resume_button": "Baixar CV",
@@ -338,7 +338,7 @@
     "language": "Idioma",
     "headline": "Software bem pensado,",
     "headline_em": "da interface ao motor.",
-    "intro": "Sou Matheus, desenvolvedor de software no Brasil. Construo aplicações full-stack e exploro sistemas com Rust e C++.",
+    "intro": "Sou Matheus, desenvolvedor de software no Brasil. Transformo ideias em aplicações práticas e bem pensadas.",
     "note": "Feito com curiosidade.",
     "selected": "Projetos selecionados",
     "work_title": "Ideias que ganham forma.",
@@ -350,7 +350,7 @@
     "about": "Um pouco sobre mim",
     "about_title": "Curioso por natureza.",
     "about_em": "Engenharia na prática.",
-    "portrait_note": "Olá, direto do Brasil",
+    "portrait_note": "Sempre curioso. Sempre aprendendo.",
     "exploring": "Explorando agora",
     "capabilities": "O que construo",
     "capabilities_title": "Da aplicação aos fundamentos.",
@@ -363,6 +363,7 @@
     "next": "Tem um projeto em mente?",
     "contact_title": "Algo que vale construir?",
     "contact_em": "Vamos conversar.",
-    "copy_failed": "Não foi possível copiar. Use o link de email acima."
+    "copy_failed": "Não foi possível copiar. Use o link de email acima.",
+    "exploring_topics": "Design de software · Solução criativa de problemas · Melhores experiências de uso"
   }
 }
