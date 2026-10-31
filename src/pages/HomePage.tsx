@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import ProjectShowcases from "../components/ProjectShowcases";
-import portrait from "../assets/image.webp";
 export default function HomePage() {
   const { t } = useTranslation();
   return (
@@ -30,7 +29,6 @@ export default function HomePage() {
         </div>
         <div className="paper-note" aria-hidden="true">
           {t("redesign.note")}
-          <span>↳ Rust · React · C++</span>
         </div>
         <div className="hero-bottom">
           <span>MATHEUS CORREIA DE SOUSA</span>
@@ -53,7 +51,7 @@ export default function HomePage() {
       </section>
       <section id="about" className="about-section content-section">
         <div className="portrait-frame">
-          <img src={portrait} alt="Matheus Correia de Sousa" loading="lazy" />
+          <div className="about-art" aria-hidden="true"><span className="about-art-star">✳</span><span className="about-art-initials">mcs.</span></div>
           <span className="portrait-label">
             {t("redesign.portrait_note")} ✳
           </span>
@@ -69,7 +67,7 @@ export default function HomePage() {
           <p>{t("home.education.items.0")}</p>
           <div className="exploring">
             <span className="eyebrow">{t("redesign.exploring")}</span>
-            <p>Rust · Compilers · OpenGL · Clean Architecture</p>
+            <p>{t("redesign.exploring_topics")}</p>
           </div>
         </div>
       </section>
