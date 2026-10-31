@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { featuredProjects } from "../data/projects";
-import anki from "../assets/anki-my.webp";
+import anki from "../assets/anki-my-landing.png";
 import pet from "../assets/pet-adopt.webp";
 import engine from "../assets/game-engine.webp";
 const images: Record<string, string> = {
