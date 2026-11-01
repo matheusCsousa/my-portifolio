@@ -153,10 +153,7 @@
             "Ctrl+S — Salvar cena",
             "Ctrl+Z / Ctrl+Y — Desfazer / refazer"
           ],
-          "package_title": "Teste a versão para Windows",
-          "package_text": "Baixe o artefato de uma execução bem-sucedida do workflow Windows preview package. Extraia o pacote completo e execute fersa_editor.exe com a pasta assets ao lado. Requer Windows x64 e OpenGL 3.3; não precisa de compilador. O download de artefatos exige login no GitHub.",
-          "package_link": "Versões de teste para Windows",
-          "docs_link": "Configuração e documentação",
+          "package_link": "Baixar para Windows · v0.2.0",
           "limits_title": "Escopo atual",
           "limits_text": "Este é um editor experimental. Objetos curvos usam caixas para física e seleção. A importação aceita malhas OBJ e texturas PNG/JPEG. Scripts editam o próprio objeto; entrada, criação de objetos e callbacks de colisão ficam para etapas futuras."
         }
