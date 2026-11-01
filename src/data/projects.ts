@@ -32,7 +32,7 @@ export const featuredProjects: FeaturedProject[] = [
     key: "firstgameengine",
     slug: "first-game-engine",
     category: "systems",
-    techs: ["C++", "OpenGL", "GLFW", "GLEW"],
+    techs: ["C++", "OpenGL", "Lua", "Dear ImGui"],
     githubName: "FirstGameEngine",
     accent: "from-indigo-500/20 to-cyan-500/10",
   },

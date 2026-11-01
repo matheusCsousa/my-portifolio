@@ -120,25 +120,46 @@
         }
       },
       "firstgameengine": {
-        "title": "First Game Engine",
-        "type": "Engine gráfica em C++",
-        "description": "Um experimento de engine própria feito do zero com C++, OpenGL, GLFW e GLEW para estudar renderização, shaders, assets e estrutura de engine.",
-        "summary": "First Game Engine é um projeto low-level em C++ no qual explorei como sistemas de renderização, carregamento de shaders, assets e loops de engine se conectam.",
+        "title": "Fersa · First Game Engine",
+        "type": "Engine 3D e editor de cenas",
+        "description": "Uma engine em C++ e OpenGL com editor visual de cenas, objetos primitivos, importação de assets, materiais e scripts Lua por objeto.",
+        "summary": "A Fersa evoluiu de um experimento de renderização para um editor visual de cenas 3D. Monte uma cena, adicione comportamentos em Lua e teste em uma sessão de Play isolada.",
         "problem": "Engines escondem muita complexidade. Construir uma engine pequena do zero me ajudou a entender pipeline de renderização, loop de aplicação e comunicação entre sistemas.",
-        "focus": "Arquitetura em C++, renderização OpenGL, gerenciamento de shaders, renderização de assets, input e fundações para colisão.",
+        "focus": "Edição visual, persistência portátil de cenas, validação de assets, integração com Lua e arquitetura modular em C++.",
         "features": [
-          "Pipeline de renderização OpenGL com VAO, VBO, EBO e gerenciamento de shaders",
-          "Câmera livre em primeira pessoa com visualização por mouse e movimento por delta-time",
-          "Sistema de cena e entidades com transformações por entidade (posição, rotação, escala)",
-          "Sistema de input com estados de tecla (pressed / held / released) e rastreamento de mouse",
-          "Interface abstrata Logic para desacoplar a lógica do jogo do loop principal da engine",
-          "Sistema de compilação CMake com cada módulo compilado como biblioteca estática"
+          "Editor com painéis acopláveis de Hierarquia, assets, viewport e Inspector",
+          "Sete primitivos, nomes únicos ao criar objetos, gizmos e desfazer/refazer",
+          "Importação de OBJ, PNG/JPEG e Lua com textura, cor e repetição UV por objeto",
+          "Editor de código Lua com estado por objeto e callbacks durante o Play",
+          "Play/Pause/Step/Stop com cópia da cena e física em passo fixo",
+          "Arquivos de cena portáteis e pacote de teste executável para Windows"
         ],
         "learnings": [
-          "Trabalhar mais próximo de APIs gráficas e restrições de memória",
-          "Organizar código C++ para sistemas que crescem com o tempo",
-          "Entender como renderização, input e loops de atualização interagem"
-        ]
+          "Separar os dados editados da cena do estado temporário de execução",
+          "Projetar importações validadas e arquivos de projeto portáteis",
+          "Integrar scripts com APIs claras e limites de recursos"
+        ],
+        "editor": {
+          "overview_alt": "Editor Fersa com primitivos coloridos, gizmo de transformação e inspector de materiais",
+          "script_alt": "Editor de código Lua da Fersa mostrando os callbacks on_start e on_update",
+          "script_caption": "Scripts Lua por objeto são editados no aplicativo e executados em uma cópia temporária da cena durante o Play.",
+          "workflow_title": "Da criação da cena ao Play",
+          "workflow_text": "Crie um primitivo ou importe um OBJ, selecione no viewport e edite sua transformação e material. Adicione um script Lua para criar comportamentos e use Play, Pause, Step e Stop para testar. Save As copia os assets gerenciados junto da cena.",
+          "controls_title": "Controles do editor",
+          "controls": [
+            "W / E / R — Mover, girar ou redimensionar",
+            "F no viewport — Enquadrar a seleção",
+            "Botão direito + WASD — Voar e olhar ao redor",
+            "Ctrl+S — Salvar cena",
+            "Ctrl+Z / Ctrl+Y — Desfazer / refazer"
+          ],
+          "package_title": "Teste a versão para Windows",
+          "package_text": "Baixe o artefato de uma execução bem-sucedida do workflow Windows preview package. Extraia o pacote completo e execute fersa_editor.exe com a pasta assets ao lado. Requer Windows x64 e OpenGL 3.3; não precisa de compilador. O download de artefatos exige login no GitHub.",
+          "package_link": "Versões de teste para Windows",
+          "docs_link": "Configuração e documentação",
+          "limits_title": "Escopo atual",
+          "limits_text": "Este é um editor experimental. Objetos curvos usam caixas para física e seleção. A importação aceita malhas OBJ e texturas PNG/JPEG. Scripts editam o próprio objeto; entrada, criação de objetos e callbacks de colisão ficam para etapas futuras."
+        }
       },
       "petadopt": {
         "title": "Adote um Pet (NGO Pet Adoption Platform)",
@@ -349,7 +370,7 @@
     "work_intro": "Uma seleção de aplicações e experimentos. Desafios diferentes, o mesmo cuidado com o funcionamento.",
     "project_anki": "Uma aplicação de flashcards auto-hospedada que conecta uma interface React a um backend Rust. Com baralhos, revisões e persistência dos dados de estudo.",
     "project_petadopt": "Conectando animais resgatados a novos lares. Uma aplicação PHP que explora fluxos de adoção, permissões de funcionários e transações no banco de dados.",
-    "project_firstgameengine": "Uma exploração do que acontece dentro de um motor de jogos. Renderização, shaders, controles de câmera e estrutura de aplicações com C++ e OpenGL.",
+    "project_firstgameengine": "Um editor visual de cenas 3D feito do zero. Crie objetos, importe assets, adicione materiais e scripts Lua e teste a cena no Play.",
     "about": "Um pouco sobre mim",
     "about_title": "Curioso por natureza.",
     "about_em": "Engenharia na prática.",

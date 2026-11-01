@@ -119,25 +119,46 @@
         }
       },
       "firstgameengine": {
-        "title": "First Game Engine",
-        "type": "C++ graphics engine",
-        "description": "A custom game engine experiment built from scratch with C++, OpenGL, GLFW, and GLEW to study rendering, shaders, assets, and engine structure.",
-        "summary": "First Game Engine is a low-level C++ project where I explored how rendering systems, shader loading, assets, and engine loops fit together.",
+        "title": "Fersa · First Game Engine",
+        "type": "3D engine & scene editor",
+        "description": "A C++ and OpenGL engine with a visual scene editor, primitive objects, asset imports, materials, and per-object Lua scripting.",
+        "summary": "Fersa has grown from a rendering experiment into a visual 3D scene editor. Build a scene, attach Lua behavior, and test it in an isolated Play session.",
         "problem": "Game engines hide a lot of complexity. Building a small engine from scratch helped me understand the rendering pipeline, application loop, and how different systems need to communicate.",
-        "focus": "C++ architecture, OpenGL rendering, shader management, asset rendering, input, and collision-oriented foundations.",
+        "focus": "Visual authoring, portable scene persistence, asset validation, Lua integration, and modular C++ architecture.",
         "features": [
-          "OpenGL rendering pipeline with VAO, VBO, EBO and shader management",
-          "First-person free camera with mouse look and delta-time movement",
-          "Scene and entity system with per-entity transform (position, rotation, scale)",
-          "Input system with key states (pressed / held / released) and mouse tracking",
-          "Abstract Logic interface to decouple game logic from the engine loop",
-          "CMake build system with each module compiled as static libraries"
+          "Dockable editor with Hierarchy, asset browser, viewport, and Inspector",
+          "Seven primitives, unique spawn names, transform gizmos, and undo/redo",
+          "OBJ, PNG/JPEG, and Lua imports with per-object texture, tint, and UV tiling",
+          "Lua source editor with per-object state and Play-only callbacks",
+          "Play/Pause/Step/Stop with a runtime scene copy and fixed-step physics",
+          "Portable scene files and a Windows executable preview package"
         ],
         "learnings": [
-          "Working closer to graphics APIs and memory constraints",
-          "Organizing C++ code for systems that grow over time",
-          "Understanding how rendering, input, and update loops interact"
-        ]
+          "Keeping authored scene data separate from temporary runtime state",
+          "Designing validated asset imports and portable project files",
+          "Integrating a scripting runtime with clear APIs and resource limits"
+        ],
+        "editor": {
+          "overview_alt": "Fersa editor with colored primitives, a transform gizmo, and material inspector",
+          "script_alt": "Fersa Lua source editor showing on_start and on_update callbacks",
+          "script_caption": "Per-object Lua scripts are edited in the app and run on a disposable scene copy during Play.",
+          "workflow_title": "From scene building to Play",
+          "workflow_text": "Create a primitive or import an OBJ, select it in the viewport, and edit its transform and material. Attach a Lua script to add behavior, then use Play, Pause, Step, and Stop to test it. Save As copies managed assets beside the scene.",
+          "controls_title": "Editor controls",
+          "controls": [
+            "W / E / R — Move, rotate, or scale",
+            "F in the viewport — Frame selection",
+            "Right mouse + WASD — Fly and look around",
+            "Ctrl+S — Save scene",
+            "Ctrl+Z / Ctrl+Y — Undo / redo"
+          ],
+          "package_title": "Try the Windows preview",
+          "package_text": "Download the editor artifact from a successful Windows preview package workflow run. Extract the complete package and run fersa_editor.exe with its assets folder beside it. Requires Windows x64 and OpenGL 3.3; no compiler is needed. GitHub sign-in is required for workflow artifact downloads.",
+          "package_link": "Windows preview builds",
+          "docs_link": "Setup and documentation",
+          "limits_title": "Current scope",
+          "limits_text": "This is an experimental editor. Curved objects use box-based physics and picking. Imports support OBJ meshes and PNG/JPEG textures. Scripts edit their own object; input, spawning, and collision callbacks are future work."
+        }
       },
       "petadopt": {
         "title": "Adote um Pet (NGO Pet Adoption Platform)",
@@ -348,7 +369,7 @@
     "work_intro": "A selection of applications and experiments. Different challenges, the same care for how things work.",
     "project_anki": "A self-hosted flashcard application connecting a React interface to a Rust backend. Built around decks, reviews, and persistent study data.",
     "project_petadopt": "Connecting rescued animals with new homes. A PHP application exploring adoption workflows, staff permissions, and database transactions.",
-    "project_firstgameengine": "A look beneath the surface of a game engine. Exploring rendering, shaders, camera controls, and application structure with C++ and OpenGL.",
+    "project_firstgameengine": "A visual 3D scene editor built from scratch. Create objects, import assets, assign materials and Lua scripts, then test the scene in Play.",
     "about": "A little about me",
     "about_title": "Curious by nature.",
     "about_em": "An engineer in practice.",
