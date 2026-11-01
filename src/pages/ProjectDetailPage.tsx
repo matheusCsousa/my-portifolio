@@ -5,7 +5,8 @@ import { getProjectBySlug } from "../data/projects";
 import ankiMyImage from "../assets/anki-my-landing.png";
 import ankiWorkspaceImage from "../assets/anki-my-workspace.png";
 import petAdoptImage from "../assets/pet-adopt.webp";
-import gameEngineImage from "../assets/game-engine.webp";
+import gameEngineImage from "../assets/fersa-editor-overview.png";
+import engineScriptImage from "../assets/fersa-editor-scripting.png";
 
 const projectImages: Record<string, string> = {
   anki: ankiMyImage,
@@ -86,7 +87,7 @@ export default function ProjectDetailPage() {
         <div className="mb-10 overflow-hidden rounded-3xl border border-white/10 bg-slate-900/10 p-2 shadow-2xl backdrop-blur-sm">
           <img
             src={projectImages[project.key]}
-            alt={`${t(`projects.projects_list.${project.key}.title`)} Screenshot`}
+            alt={project.key === "firstgameengine" ? t("projects.projects_list.firstgameengine.editor.overview_alt") : `${t(`projects.projects_list.${project.key}.title`)} Screenshot`}
             className="w-full h-auto object-cover rounded-2xl border border-white/5 hover:scale-[1.005] transition duration-500"
           />
         </div>
@@ -166,180 +167,34 @@ export default function ProjectDetailPage() {
           </section>
         </div>
 
-        {/* Technical Deep-Dive Section (Only for First Game Engine) */}
         {project.key === "firstgameengine" && (
-          <section className="mt-12 border-t border-white/5 pt-12">
-            <h2 className="mb-8 text-glow-teal text-3xl font-extrabold tracking-tight text-white">
-              {t("projects.architecture_title")}
-            </h2>
-
-            <div className="grid gap-8 lg:grid-cols-12">
-              {/* Architecture & Logic Interface */}
-              <div className="lg:col-span-8 space-y-6">
-                <div className="rounded-3xl border border-white/5 bg-slate-900/20 p-6 md:p-8">
-                  <h3 className="mb-3 text-xl font-bold text-white">
-                    {t("projects.architecture_subtitle")}
-                  </h3>
-                  <p className="mb-4 text-sm leading-relaxed text-slate-400">
-                    {t("projects.architecture_desc")}
-                  </p>
-                  
-                  {/* Code block Core::Logic */}
-                  <div className="relative rounded-2xl border border-white/5 bg-slate-950/90 p-4 font-mono text-xs text-teal-300 overflow-x-auto">
-                    <div className="absolute top-2 right-4 text-[10px] text-slate-500 font-sans uppercase">core/Logic/Logic.hpp</div>
-                    <pre>{`class Logic {
-public:
-    virtual void onUpdate() = 0;
-    virtual void onRender() = 0;
-};`}</pre>
-                  </div>
-
-                  <p className="my-4 text-sm leading-relaxed text-slate-400">
-                    {t("projects.new_app_desc")}
-                  </p>
-
-                  {/* Code block Game App Example */}
-                  <div className="relative rounded-2xl border border-white/5 bg-slate-950/90 p-4 font-mono text-xs text-teal-300 overflow-x-auto">
-                    <pre>{`#include "core/Game/Game.hpp"
-#include "YourLogic.hpp"
-
-int main() {
-    Core::GameSpecs specs;
-    specs.title = "My Game";
-    specs.windowSpec.width = 1280;
-    specs.windowSpec.height = 720;
-
-    Core::Game game(specs);
-    game.pushLogic<YourLogic>();
-    game.run();
-}`}</pre>
-                  </div>
-                </div>
-
-                {/* Subsystems (Camera & Input) */}
-                <div className="rounded-3xl border border-white/5 bg-slate-900/20 p-6 md:p-8 space-y-6">
-                  <h3 className="text-xl font-bold text-white">
-                    {t("projects.camera_system_title")}
-                  </h3>
-                  
-                  <div>
-                    <p className="mb-4 text-sm leading-relaxed text-slate-400">
-                      {t("projects.camera_desc")}
-                    </p>
-                    
-                    {/* Key controls table */}
-                    <div className="overflow-x-auto rounded-2xl border border-white/5 bg-slate-950/50">
-                      <table className="w-full text-left border-collapse text-xs text-slate-300">
-                        <thead>
-                          <tr className="border-b border-white/10 bg-slate-900/50 text-slate-400 font-semibold">
-                            <th className="p-3 font-medium">Key</th>
-                            <th className="p-3 font-medium">Action</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr className="border-b border-white/5">
-                            <td className="p-3 font-mono text-teal-400">W / S</td>
-                            <td className="p-3 text-slate-400">Move forward / backward</td>
-                          </tr>
-                          <tr className="border-b border-white/5">
-                            <td className="p-3 font-mono text-teal-400">A / D</td>
-                            <td className="p-3 text-slate-400">Strafe left / right</td>
-                          </tr>
-                          <tr className="border-b border-white/5">
-                            <td className="p-3 font-mono text-teal-400">Q / E</td>
-                            <td className="p-3 text-slate-400">Move down / up</td>
-                          </tr>
-                          <tr className="border-b border-white/5">
-                            <td className="p-3 font-mono text-teal-400">Mouse</td>
-                            <td className="p-3 text-slate-400">Look around</td>
-                          </tr>
-                          <tr className="border-b border-white/5">
-                            <td className="p-3 font-mono text-teal-400">F</td>
-                            <td className="p-3 text-slate-400">Toggle mouse capture</td>
-                          </tr>
-                          <tr>
-                            <td className="p-3 font-mono text-teal-400">Escape</td>
-                            <td className="p-3 text-slate-400">Close window</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-
-                  <div>
-                    <p className="mb-4 text-sm leading-relaxed text-slate-400">
-                      {t("projects.input_desc")}
-                    </p>
-
-                    {/* Input system code block */}
-                    <div className="rounded-2xl border border-white/5 bg-slate-950/90 p-4 font-mono text-xs text-teal-300 overflow-x-auto">
-                      <pre>{`enum KeyState { KEY_RELEASED, KEY_PRESSED, KEY_HELD };
-
-Core::Input::isKeyPressed(GLFW_KEY_W);  // true only on the frame it was pressed
-Core::Input::isKeyHeld(GLFW_KEY_W);     // true while held down
-Core::Input::getDeltaTime();            // frame delta for consistent movement speed`}</pre>
-                    </div>
-                  </div>
-                </div>
+          <section className="mt-12 border-t border-white/5 pt-12 space-y-8">
+            <div className="grid gap-8 md:grid-cols-2">
+              <div>
+                <h2 className="mb-4 text-2xl font-bold">{t("projects.projects_list.firstgameengine.editor.workflow_title")}</h2>
+                <p className="text-sm leading-relaxed text-slate-400">{t("projects.projects_list.firstgameengine.editor.workflow_text")}</p>
               </div>
-
-              {/* Sidebar: Structure & Build Instructions */}
-              <div className="lg:col-span-4 space-y-6">
-                <div className="rounded-3xl border border-white/5 bg-slate-900/20 p-6">
-                  <h3 className="mb-4 text-lg font-bold text-white">
-                    {t("projects.structure_title")}
-                  </h3>
-                  
-                  {/* File structure tree */}
-                  <div className="rounded-2xl border border-white/5 bg-slate-950/70 p-4 font-mono text-[10px] text-slate-400 leading-normal overflow-x-auto">
-                    <pre>{`game_engine/
-├── core/
-│   ├── Game/
-│   ├── Window/
-│   ├── Input/
-│   ├── Logic/
-│   ├── Scene/
-│   ├── Entity/
-│   ├── Event/
-│   └── Graphics/
-│       ├── Camera/
-│       ├── Mesh/
-│       └── Renderer/
-│           ├── Shader/
-│           ├── VAO/
-│           ├── VBO/
-│           └── EBO/
-└── gameApp/
-    ├── main.cpp
-    ├── GameLogic.cpp
-    ├── Camera/
-    └── shader/`}</pre>
-                  </div>
-                </div>
-
-                <div className="rounded-3xl border border-white/5 bg-slate-900/20 p-6 space-y-4">
-                  <h3 className="text-lg font-bold text-white">
-                    {t("projects.build_run_title")}
-                  </h3>
-                  
-                  <div className="space-y-3">
-                    <p className="text-xs text-slate-400">Clone and build from source:</p>
-                    <div className="rounded-2xl border border-white/5 bg-slate-950/90 p-3 font-mono text-[10px] text-teal-300 overflow-x-auto">
-                      <pre>{`git clone https://github.com/matheusCsousa/FirstGameEngine.git
-cd FirstGameEngine
-mkdir build && cd build
-cmake ..
-make`}</pre>
-                    </div>
-                  </div>
-
-                  <div className="space-y-3">
-                    <p className="text-xs text-slate-400">Run the application:</p>
-                    <div className="rounded-2xl border border-white/5 bg-slate-950/90 p-3 font-mono text-[10px] text-teal-300 overflow-x-auto">
-                      <pre>{`./build/gameApp/fersa`}</pre>
-                    </div>
-                  </div>
-                </div>
+              <div>
+                <h3 className="mb-4 text-xl font-bold">{t("projects.projects_list.firstgameengine.editor.controls_title")}</h3>
+                <ul className="space-y-2 text-sm text-slate-400">
+                  {(t("projects.projects_list.firstgameengine.editor.controls", { returnObjects: true }) as string[]).map((control) => <li key={control}>{control}</li>)}
+                </ul>
+              </div>
+            </div>
+            <figure className="overflow-hidden rounded-3xl border border-white/10 bg-slate-900/10 p-2">
+              <img src={engineScriptImage} alt={t("projects.projects_list.firstgameengine.editor.script_alt")} className="w-full h-auto rounded-2xl" width="1282" height="752" loading="lazy" />
+              <figcaption className="px-4 py-3 text-sm text-slate-400">{t("projects.projects_list.firstgameengine.editor.script_caption")}</figcaption>
+            </figure>
+            <div className="grid gap-8 md:grid-cols-2">
+              <div>
+                <h3 className="mb-4 text-xl font-bold">{t("projects.projects_list.firstgameengine.editor.package_title")}</h3>
+                <p className="mb-4 text-sm leading-relaxed text-slate-400">{t("projects.projects_list.firstgameengine.editor.package_text")}</p>
+                <a className="button" href="https://github.com/matheusCsousa/FirstGameEngine/actions/workflows/package.yml" target="_blank" rel="noopener noreferrer">{t("projects.projects_list.firstgameengine.editor.package_link")} ↗</a>
+                <p className="mt-4"><a href="https://github.com/matheusCsousa/FirstGameEngine#build-from-source" target="_blank" rel="noopener noreferrer">{t("projects.projects_list.firstgameengine.editor.docs_link")} ↗</a></p>
+              </div>
+              <div>
+                <h3 className="mb-4 text-xl font-bold">{t("projects.projects_list.firstgameengine.editor.limits_title")}</h3>
+                <p className="text-sm leading-relaxed text-slate-400">{t("projects.projects_list.firstgameengine.editor.limits_text")}</p>
               </div>
             </div>
           </section>
