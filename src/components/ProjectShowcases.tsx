@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { featuredProjects } from "../data/projects";
 import anki from "../assets/anki-my-landing.png";
 import pet from "../assets/pet-adopt.webp";
-import engine from "../assets/game-engine.webp";
+import engine from "../assets/fersa-editor-overview.png";
 const images: Record<string, string> = {
   anki,
   petadopt: pet,
@@ -31,7 +31,7 @@ export default function ProjectShowcases() {
             </div>
             <img
               src={images[project.key]}
-              alt={t(`projects.projects_list.${project.key}.title`)}
+              alt={t(`projects.projects_list.${project.key}.${project.key === "firstgameengine" ? "editor.overview_alt" : "title"}`)}
               loading="lazy"
               width="1000"
               height="650"
