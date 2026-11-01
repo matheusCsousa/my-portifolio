@@ -152,10 +152,7 @@
             "Ctrl+S — Save scene",
             "Ctrl+Z / Ctrl+Y — Undo / redo"
           ],
-          "package_title": "Try the Windows preview",
-          "package_text": "Download the editor artifact from a successful Windows preview package workflow run. Extract the complete package and run fersa_editor.exe with its assets folder beside it. Requires Windows x64 and OpenGL 3.3; no compiler is needed. GitHub sign-in is required for workflow artifact downloads.",
-          "package_link": "Windows preview builds",
-          "docs_link": "Setup and documentation",
+          "package_link": "Download for Windows · v0.2.0",
           "limits_title": "Current scope",
           "limits_text": "This is an experimental editor. Curved objects use box-based physics and picking. Imports support OBJ meshes and PNG/JPEG textures. Scripts edit their own object; input, spawning, and collision callbacks are future work."
         }

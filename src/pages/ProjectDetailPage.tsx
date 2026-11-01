@@ -187,10 +187,13 @@ export default function ProjectDetailPage() {
             </figure>
             <div className="grid gap-8 md:grid-cols-2">
               <div>
-                <h3 className="mb-4 text-xl font-bold">{t("projects.projects_list.firstgameengine.editor.package_title")}</h3>
-                <p className="mb-4 text-sm leading-relaxed text-slate-400">{t("projects.projects_list.firstgameengine.editor.package_text")}</p>
-                <a className="button" href="https://github.com/matheusCsousa/FirstGameEngine/actions/workflows/package.yml" target="_blank" rel="noopener noreferrer">{t("projects.projects_list.firstgameengine.editor.package_link")} ↗</a>
-                <p className="mt-4"><a href="https://github.com/matheusCsousa/FirstGameEngine#build-from-source" target="_blank" rel="noopener noreferrer">{t("projects.projects_list.firstgameengine.editor.docs_link")} ↗</a></p>
+                <a
+                  className="button"
+                  href="/downloads/fersa-editor-0.2.0-windows-x64.zip"
+                  download="Fersa-Editor-0.2.0-Windows-x64.zip"
+                >
+                  {t("projects.projects_list.firstgameengine.editor.package_link")} ↓
+                </a>
               </div>
               <div>
                 <h3 className="mb-4 text-xl font-bold">{t("projects.projects_list.firstgameengine.editor.limits_title")}</h3>
